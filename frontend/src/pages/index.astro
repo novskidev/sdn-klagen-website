@@ -1,0 +1,384 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<Layout>
+	<div class="relative flex min-h-screen w-full flex-col overflow-hidden">
+		<div class="absolute inset-0 z-0 pointer-events-none">
+			<div
+				class="absolute inset-0 bg-gradient-to-b from-[#87CEEB] to-[#E0F6FF] dark:from-[#0f172a] dark:to-[#1e293b]"
+			></div>
+			<div class="absolute inset-0 bg-cloud-pattern opacity-30"></div>
+			<div class="absolute -top-20 -right-20 w-64 h-64 bg-accent-yellow rounded-full blur-3xl opacity-60"></div>
+			<div
+				class="absolute bottom-0 w-full h-1/3 bg-[#6BCB77] rounded-t-[100%] scale-150 translate-y-20 border-t-8 border-[#58b363] dark:bg-[#1e4620] dark:border-[#163618]"
+			></div>
+			<div
+				class="absolute bottom-0 -left-20 w-2/3 h-1/4 bg-[#8ADD95] rounded-t-[100%] scale-125 translate-y-10 dark:bg-[#2d5e30]"
+			></div>
+		</div>
+		<div class="relative z-10 flex flex-col h-full grow">
+			<header class="w-full px-4 py-6 md:px-10 flex justify-center">
+				<div
+					class="bg-white/90 dark:bg-[#1e293b]/90 backdrop-blur-md rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.08)] px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4 max-w-[1200px] w-full border-4 border-white dark:border-[#334155]"
+				>
+					<div class="flex items-center gap-3 pl-2">
+						<div class="bg-accent-yellow p-2 rounded-full border-2 border-white shadow-sm text-amber-700">
+							<span class="material-symbols-outlined !text-3xl">school</span>
+						</div>
+						<h2 class="text-primary dark:text-blue-300 text-2xl font-black tracking-tight bubbly-text">
+							SDN Klagen 1
+						</h2>
+					</div>
+					<nav class="flex flex-wrap justify-center gap-3">
+						<a
+							class:list={[
+								"floating-nav px-5 py-2 bg-accent-red text-white font-bold rounded-full shadow-[0_4px_0_rgb(180,50,50)] active:shadow-none active:translate-y-1 transition-all text-sm uppercase tracking-wide",
+								{ "nav-active": pathname === "/" }
+							]}
+							href="/"
+							aria-current={pathname === "/" ? "page" : undefined}
+						>
+							Beranda
+						</a>
+						<a
+							class:list={[
+								"floating-nav px-5 py-2 bg-accent-yellow text-amber-900 font-bold rounded-full shadow-[0_4px_0_rgb(200,160,0)] active:shadow-none active:translate-y-1 transition-all text-sm uppercase tracking-wide",
+								{ "nav-active": pathname === "/tentang-kami" }
+							]}
+							href="/tentang-kami"
+							aria-current={pathname === "/tentang-kami" ? "page" : undefined}
+						>
+							Tentang Kami
+						</a>
+						<a
+							class:list={[
+								"floating-nav px-5 py-2 bg-accent-green text-white font-bold rounded-full shadow-[0_4px_0_rgb(60,150,80)] active:shadow-none active:translate-y-1 transition-all text-sm uppercase tracking-wide",
+								{ "nav-active": pathname === "/galeri" }
+							]}
+							href="/galeri"
+							aria-current={pathname === "/galeri" ? "page" : undefined}
+						>
+							Galeri
+						</a>
+						<a
+							class:list={[
+								"floating-nav px-5 py-2 bg-primary text-white font-bold rounded-full shadow-[0_4px_0_rgb(30,100,200)] active:shadow-none active:translate-y-1 transition-all text-sm uppercase tracking-wide",
+								{ "nav-active": pathname === "/kontak" }
+							]}
+							href="/kontak"
+							aria-current={pathname === "/kontak" ? "page" : undefined}
+						>
+							Kontak
+						</a>
+					</nav>
+					<div class="flex items-center gap-3">
+						<button
+							id="theme-toggle"
+							class="floating-nav flex items-center gap-2 bg-white/90 dark:bg-[#0f172a] text-primary dark:text-yellow-200 px-4 py-2.5 rounded-full font-bold shadow-[0_4px_0_rgba(0,0,0,0.1)] dark:shadow-[0_4px_0_rgba(255,255,255,0.06)] active:shadow-none active:translate-y-1 transition-all"
+							aria-label="Toggle tema"
+							type="button"
+						>
+							<span class="material-symbols-outlined text-xl" data-icon>dark_mode</span>
+							<span class="hidden sm:inline text-sm" data-label>Mode Gelap</span>
+						</button>
+						<button
+							class="flex items-center gap-2 bg-[#ff9f43] hover:bg-[#ff8f23] text-white px-6 py-2.5 rounded-full font-black shadow-[0_4px_0_#e67e22] active:shadow-none active:translate-y-1 transition-all"
+							type="button"
+						>
+							<span class="material-symbols-outlined">backpack</span>
+							<span>Masuk ke Portal Siswa</span>
+						</button>
+					</div>
+				</div>
+			</header>
+			<div
+				class="w-full max-w-[1200px] mx-auto px-4 py-8 md:py-12 flex flex-col md:flex-row items-center gap-8 md:gap-16"
+			>
+				<div class="flex-1 text-center md:text-left space-y-6">
+					<div
+						class="inline-block bg-white/80 dark:bg-black/20 backdrop-blur px-4 py-1.5 rounded-full text-primary font-bold text-sm tracking-wide mb-2 shadow-sm transform -rotate-2"
+					>
+						✨ Tempat belajar yang menyenangkan!
+					</div>
+					<h1
+						class="text-5xl md:text-7xl font-black text-[#2d3436] dark:text-white leading-[1.1] drop-shadow-sm"
+					>
+						Selamat Datang di
+						<span class="text-primary underline decoration-wavy decoration-accent-yellow underline-offset-8">
+							SDN Klagen 1
+						</span>
+					</h1>
+					<p
+						class="text-lg md:text-xl text-[#636e72] dark:text-gray-300 font-medium max-w-lg mx-auto md:mx-0 leading-relaxed bg-white/60 dark:bg-black/40 p-4 rounded-2xl backdrop-blur-sm"
+					>
+						Bergabunglah dengan komunitas kami yang penuh warna di mana setiap hari membawa penemuan
+						baru. Kami menumbuhkan rasa ingin tahu, kebaikan, dan kreativitas.
+					</p>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
+						<button
+							class="bg-primary hover:bg-blue-600 text-white text-lg font-bold py-4 px-8 rounded-full shadow-[0_6px_0_#1a6bc0] active:shadow-none active:translate-y-[6px] transition-all flex items-center justify-center gap-2 w-full sm:w-auto"
+						>
+							<span class="material-symbols-outlined">login</span>
+							Masuk Siswa
+						</button>
+						<button
+							class="bg-white hover:bg-gray-50 text-primary text-lg font-bold py-4 px-8 rounded-full shadow-[0_6px_0_#d1d5db] active:shadow-none active:translate-y-[6px] transition-all w-full sm:w-auto border-2 border-gray-100"
+						>
+							Tur Sekolah
+						</button>
+					</div>
+				</div>
+				<div class="flex-1 w-full max-w-[500px] relative">
+					<div class="relative w-full aspect-square">
+						<div class="absolute inset-0 bg-accent-yellow/30 rounded-full blur-3xl transform scale-90 animate-pulse"></div>
+						<div
+							class="relative z-10 w-full h-full rounded-[3rem] overflow-hidden border-8 border-white shadow-[0_20px_50px_rgba(0,0,0,0.1)] transform rotate-2 hover:rotate-0 transition-transform duration-500 bg-white"
+							data-alt="Anak-anak belajar dan bersenang-senang di lingkungan kelas yang penuh warna"
+							style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAygnaL6BjmZeomSt7X4YWkuq3_rCU11L8s37Nx-7xhNi0Hlm7PzOg2XjZWyA3PFURrH39uFsK0VAJxtGFVwO68Mprvrvp51s8AxQVsl5n1Ah8d3M5_jAoK6_llq0mdNtp6UisIR1NNM18glfNnGO4jIB4EEwkv67FFm73pnTrd9_VQe6At0PAiP7LJSVaHElZw1OwI_SJ6cvIlyr6bbUpEGvbGXtjf0W6h8DGvd-YSZbQRf9FrVwymwGHDh5PlwmcjDllr6ZN15Eg"); background-size: cover; background-position: center;'
+						>
+							<div
+								class="absolute -bottom-6 -right-6 bg-accent-red text-white p-4 rounded-full shadow-lg transform rotate-12 flex flex-col items-center justify-center w-24 h-24 border-4 border-white"
+							>
+								<span class="text-xs font-bold uppercase">Ayo</span>
+								<span class="text-xl font-black">Ikut!</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="w-full max-w-[1200px] mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-12 gap-6">
+				<div
+					class="col-span-1 md:col-span-7 bg-white dark:bg-[#1e293b] rounded-[2.5rem] p-8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] border-b-8 border-accent-yellow relative overflow-hidden group"
+				>
+					<div class="absolute top-0 right-0 p-8 opacity-10">
+						<span class="material-symbols-outlined text-9xl">lightbulb</span>
+					</div>
+					<div class="relative z-10 flex flex-col sm:flex-row gap-6 items-start">
+						<div class="bg-accent-yellow/20 p-4 rounded-full text-amber-600 mb-2 sm:mb-0">
+							<span class="material-symbols-outlined text-4xl">emoji_objects</span>
+						</div>
+						<div>
+							<h3 class="text-amber-500 font-black text-xl mb-2 uppercase tracking-wider">
+								Fakta Seru Hari Ini 💡
+							</h3>
+							<p class="text-[#2d3436] dark:text-white text-lg font-medium leading-relaxed">
+								"Tahukah kamu bahwa gurita memiliki tiga jantung? Dua memompa darah ke insang,
+								sementara satu yang lebih besar mengalirkan darah ke seluruh tubuh."
+							</p>
+							<div class="mt-4 flex gap-2">
+								<span
+									class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs font-bold text-gray-500 dark:text-gray-300"
+								>
+									#Sains
+								</span>
+								<span
+									class="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-xs font-bold text-gray-500 dark:text-gray-300"
+								>
+									#Alam
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div
+					class="col-span-1 md:col-span-5 bg-accent-red text-white rounded-[2.5rem] p-8 shadow-[0_10px_40px_-10px_rgba(255,107,107,0.4)] border-b-8 border-[#c92a2a] flex flex-col justify-center relative overflow-hidden"
+				>
+					<div class="absolute -right-4 -bottom-4 opacity-20 transform rotate-12">
+						<span class="material-symbols-outlined text-9xl">campaign</span>
+					</div>
+					<h3 class="text-2xl font-black mb-2 relative z-10">Pengumuman</h3>
+					<p class="font-medium mb-4 relative z-10 text-red-100">
+						Audisi Drama Sekolah dimulai hari Senin depan! Jangan lupa untuk mendaftar.
+					</p>
+					<button
+						class="bg-white text-accent-red px-6 py-3 rounded-full font-bold self-start shadow-md hover:bg-gray-50 transition-colors relative z-10"
+					>
+						Baca Selengkapnya
+					</button>
+				</div>
+			</div>
+			<div class="w-full py-16 px-4 relative">
+				<div
+					class="absolute inset-0 bg-white/40 dark:bg-black/20 skew-y-2 transform origin-top-left h-full w-full z-0"
+				></div>
+				<div class="max-w-[1200px] mx-auto relative z-10">
+					<div class="flex items-center justify-between mb-10 px-4">
+						<h2
+							class="text-3xl md:text-4xl font-black text-[#2d3436] dark:text-white drop-shadow-sm flex items-center gap-3"
+						>
+							<span class="material-symbols-outlined text-accent-red">photo_camera</span>
+							Momen Ceria Kami
+						</h2>
+						<a
+							class="hidden sm:inline-block text-primary font-bold hover:underline decoration-2 underline-offset-4"
+							href="#"
+						>
+							Lihat Semua Foto -&gt;
+						</a>
+					</div>
+					<div
+						class="flex flex-nowrap overflow-x-auto pb-12 pt-4 px-4 gap-6 md:gap-8 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden"
+					>
+						<div
+							class="flex-none w-64 md:w-72 bg-white p-3 pb-8 shadow-xl rounded-sm transform polaroid-tilt-1 hover:scale-105 hover:z-20 hover:rotate-0 transition-all duration-300 cursor-pointer"
+						>
+							<div
+								class="w-full aspect-square bg-gray-100 mb-3 overflow-hidden shadow-inner"
+								data-alt="Kids painting in art class with colorful aprons"
+								style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWsqjZkFQD4CM_1MJWj6CrCMnD6T3_CI14CyZxli3WPeK8uwWWFy49CH9-yaJcdr-2JbiSE7ZVWeQPYfAd8JIYT3auWQT6-a2oM3ocOglCz2EYLKL8pvQPbKzM4yk2Qt-LrpyjubHS27Ob70p8jukY12KUsxEJMvob9RFrK3mVkYPhRD3WnsJvCqyDYDtzR691S8UIbiXO6yjkEYxtR_xsO4fZVoqX0pDUb3deU22M0fxrLNXI4T_RphLpCafI8Bg-kxOVcWrP9YQ'); background-size: cover; background-position: center;"
+							></div>
+							<p
+								class="text-center font-display font-bold text-gray-700 text-lg transform rotate-[-1deg]"
+								style="font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;"
+							>
+								Kelas Seni Seru! 🎨
+							</p>
+						</div>
+						<div
+							class="flex-none w-64 md:w-72 bg-white p-3 pb-8 shadow-xl rounded-sm transform polaroid-tilt-2 hover:scale-105 hover:z-20 hover:rotate-0 transition-all duration-300 cursor-pointer"
+						>
+							<div
+								class="w-full aspect-square bg-gray-100 mb-3 overflow-hidden shadow-inner"
+								data-alt="Students presenting a volcano project at the science fair"
+								style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAjR6lKIQAg1cark0HtFD8B97zNJT_23G_1dJQ54XkBtdcnNkL17SGv1TRc15fRGVO4T30KXNFEzz2EwdJu4I4h7jQDpMnB7favFE2VflMUuRzjzR9_rNcFSlKfDBU9gJQVTvyIzFyzgU7kXS8l7jWLBKQy3feqSayBAOxy89P84kY84vIAVj_hW6-NM8RMuNaDfN1xo41mMirmQWpRvk7_KAMDMLkb1Im1-kbIgPmmIutF_J1jyKpWtZHfxh6sAFSAfgPRrGd4xU'); background-size: cover; background-position: center;"
+							></div>
+							<p
+								class="text-center font-display font-bold text-gray-700 text-lg transform rotate-[1deg]"
+								style="font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;"
+							>
+								Pameran Sains 🧪
+							</p>
+						</div>
+						<div
+							class="flex-none w-64 md:w-72 bg-white p-3 pb-8 shadow-xl rounded-sm transform polaroid-tilt-3 hover:scale-105 hover:z-20 hover:rotate-0 transition-all duration-300 cursor-pointer"
+						>
+							<div
+								class="w-full aspect-square bg-gray-100 mb-3 overflow-hidden shadow-inner"
+								data-alt="Children playing on the playground slide during recess"
+								style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBz8jc8D84V-ce0mCQYkYbPmvpERno3tlg7UQJ1hkBayDVYg0XlAlhBpeYeMcL0prHWRfTecfRAvKg4tV8Nmen0w_ujz8owGproDHgU7PtEbE0ye1PJtgeLECzVcPvyrWpn14ua0DOBmi9aH4u9L3wZnXLQSBn5_3XDp3PVhLh_pt47gB3jv_i21TsI72coWggydiPNMA8CDs6BuEUQIkD6H-jTAMyDPe4N_mYYdMrrjw5o9549S2K6hcdXlwtEcjCeHhwWB-w9-jk'); background-size: cover; background-position: center;"
+							></div>
+							<p
+								class="text-center font-display font-bold text-gray-700 text-lg"
+								style="font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;"
+							>
+								Istirahat Terbaik ☀️
+							</p>
+						</div>
+						<div
+							class="flex-none w-64 md:w-72 bg-white p-3 pb-8 shadow-xl rounded-sm transform polaroid-tilt-4 hover:scale-105 hover:z-20 hover:rotate-0 transition-all duration-300 cursor-pointer"
+						>
+							<div
+								class="w-full aspect-square bg-gray-100 mb-3 overflow-hidden shadow-inner"
+								data-alt="Teacher reading a book to a group of engaged students"
+								style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHrnFCiH-b5tFZt431SKvJD1_g6LyfOsV4-FCKugBR-zUg1zPp1URREkF8XW2dCA59kVa0Tue12OdzkUmaX5svuzkcW53RYh3ZYdTcpmOOXSKcVzR4txRx2VhyVHzGQvr0AH7EusS3JGN2yohhrNUQScPgM2jeYbq1RZDwWw0SVGslR6OT8vIzEilQUdyS4Hxmo6t6UqrcWEbZ0kinwcPV4UjmtFRxA_TeYkKDcmtRK17UTNR2yXl86d81AOUnLkok2br79nqCOHc'); background-size: cover; background-position: center;"
+							></div>
+							<p
+								class="text-center font-display font-bold text-gray-700 text-lg transform rotate-[2deg]"
+								style="font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;"
+							>
+								Waktunya Membaca 📚
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="relative mt-20 pt-32 pb-10 overflow-hidden">
+				<div
+					class="absolute inset-0 top-10 bg-[#6BCB77] dark:bg-[#1e4620] transform skew-y-[-2deg] origin-bottom-right z-0 border-t-[10px] border-[#58b363] dark:border-[#163618]"
+				></div>
+				<div class="relative z-10 max-w-[1200px] mx-auto px-6 text-white text-center md:text-left">
+					<div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+						<div class="col-span-1 md:col-span-2">
+							<h2 class="text-3xl font-black mb-4 flex items-center justify-center md:justify-start gap-2">
+								<span class="material-symbols-outlined">school</span>
+								SDN Klagen 1
+							</h2>
+							<p class="font-medium opacity-90 text-lg max-w-sm mx-auto md:mx-0">
+								Jl. Pendidikan No. 123, Kota Belajar<br />
+								Membangun masa depan cerah, satu senyuman setiap saat.
+							</p>
+						</div>
+						<div class="flex flex-col gap-3 items-center md:items-start">
+							<h4 class="font-bold text-xl text-[#e8f5e9]">Tautan Cepat</h4>
+							<a class="hover:underline opacity-90 font-medium" href="#">Tentang Kami</a>
+							<a class="hover:underline opacity-90 font-medium" href="#">Pendaftaran</a>
+							<a class="hover:underline opacity-90 font-medium" href="#">Kalender</a>
+						</div>
+						<div class="flex flex-col gap-4 items-center md:items-start">
+							<h4 class="font-bold text-xl text-[#e8f5e9]">Hubungi Kami</h4>
+							<div class="flex gap-4">
+								<a
+									class="w-10 h-10 bg-white text-[#6BCB77] rounded-full flex items-center justify-center hover:bg-yellow-200 transition-colors"
+									href="#"
+								>
+									<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+										<path
+											d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+										></path>
+									</svg>
+								</a>
+								<a
+									class="w-10 h-10 bg-white text-[#6BCB77] rounded-full flex items-center justify-center hover:bg-yellow-200 transition-colors"
+									href="#"
+								>
+									<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+										<path
+											d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+										></path>
+									</svg>
+								</a>
+								<a
+									class="w-10 h-10 bg-white text-[#6BCB77] rounded-full flex items-center justify-center hover:bg-yellow-200 transition-colors"
+									href="#"
+								>
+									<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+										<path
+											d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.85-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+										></path>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="mt-10 pt-4 border-t border-white/20 text-sm opacity-70">
+						© 2023 SDN Klagen 1. Hak cipta dilindungi undang-undang.
+					</div>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<script is:inline>
+		const root = document.documentElement;
+		const toggle = document.getElementById('theme-toggle');
+		const icon = toggle?.querySelector('[data-icon]');
+		const label = toggle?.querySelector('[data-label]');
+
+		const applyTheme = (theme) => {
+			root.classList.remove('light', 'dark');
+			root.classList.add(theme);
+			try {
+				localStorage.setItem('theme', theme);
+			} catch {}
+			if (icon) {
+				icon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+			}
+			if (label) {
+				label.textContent = theme === 'dark' ? 'Mode Terang' : 'Mode Gelap';
+			}
+			toggle?.setAttribute('aria-label', theme === 'dark' ? 'Ganti ke mode terang' : 'Ganti ke mode gelap');
+		};
+
+		if (toggle) {
+			const initial = root.classList.contains('dark') ? 'dark' : 'light';
+			applyTheme(initial);
+			toggle.addEventListener('click', () => {
+				const next = root.classList.contains('dark') ? 'light' : 'dark';
+				applyTheme(next);
+			});
+		}
+	</script>
+</Layout>

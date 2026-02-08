@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+
+const {
+	title = 'Beranda SDN Klagen 1',
+	bodyClass = 'bg-background-light dark:bg-background-dark text-[#111418]'
+} = Astro.props;
+---
+
+<!doctype html>
+<html class="light" lang="id">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<script is:inline>
+			try {
+				const storedTheme = localStorage.getItem('theme');
+				const prefersDark = window.matchMedia?.('(prefers-color-scheme: dark)').matches;
+				const theme = storedTheme ?? (prefersDark ? 'dark' : 'light');
+				document.documentElement.classList.remove('light', 'dark');
+				document.documentElement.classList.add(theme);
+			} catch {}
+		</script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body class={`font-display overflow-x-hidden ${bodyClass}`}>
+		<slot />
+	</body>
+</html>

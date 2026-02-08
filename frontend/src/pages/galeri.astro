@@ -1,0 +1,346 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<Layout
+	title="Keseruan & Aktivitas Siswa - SDN Klagen 1"
+	bodyClass="bg-[#f5f7f8] dark:bg-background-dark font-display text-[#111418] overflow-x-hidden"
+>
+	<div class="relative flex min-h-screen w-full flex-col">
+		<header class="sticky top-0 z-50 flex items-center justify-between border-b border-gray-100 bg-white/90 backdrop-blur-md px-6 py-3 shadow-sm lg:px-10">
+			<div class="flex items-center gap-3">
+				<div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+					<span class="material-symbols-outlined text-2xl">school</span>
+				</div>
+				<h2 class="text-xl font-black tracking-tight text-[#111418]">SDN Klagen 1</h2>
+			</div>
+			<nav class="hidden gap-3 md:flex items-center">
+				<a
+					class:list={[
+						"flex items-center justify-center rounded-full bg-[#ef4444] px-5 py-2 text-sm font-bold text-white shadow-md transition-transform hover:scale-105 hover:bg-red-600",
+						{ "nav-active": pathname === "/" }
+					]}
+					href="/"
+					aria-current={pathname === "/" ? "page" : undefined}
+				>
+					Beranda
+				</a>
+				<a
+					class:list={[
+						"flex items-center justify-center rounded-full bg-[#3b82f6] px-5 py-2 text-sm font-bold text-white shadow-md transition-transform hover:scale-105 hover:bg-blue-600",
+						{ "nav-active": pathname === "/tentang-kami" }
+					]}
+					href="/tentang-kami"
+					aria-current={pathname === "/tentang-kami" ? "page" : undefined}
+				>
+					Tentang Kami
+				</a>
+				<a
+					class:list={[
+						"flex items-center justify-center rounded-full bg-[#facc15] px-5 py-2 text-sm font-bold text-[#111418] shadow-md transition-transform hover:scale-105 hover:bg-yellow-400",
+						{ "nav-active": pathname === "/galeri" }
+					]}
+					href="/galeri"
+					aria-current={pathname === "/galeri" ? "page" : undefined}
+				>
+					Galeri
+				</a>
+				<a
+					class:list={[
+						"flex items-center justify-center rounded-full bg-[#ef4444] px-5 py-2 text-sm font-bold text-white shadow-md transition-transform hover:scale-105 hover:bg-red-600",
+						{ "nav-active": pathname === "/kontak" }
+					]}
+					href="/kontak"
+					aria-current={pathname === "/kontak" ? "page" : undefined}
+				>
+					Kontak
+				</a>
+			</nav>
+			<div class="flex items-center gap-4">
+				<button
+					class="hidden md:flex h-10 items-center justify-center rounded-full bg-primary px-6 text-sm font-bold text-white shadow-md transition-transform hover:scale-105 hover:bg-blue-600"
+					type="button"
+				>
+					Masuk
+				</button>
+				<button class="md:hidden flex items-center justify-center rounded-full bg-gray-100 p-2 text-[#111418]" type="button">
+					<span class="material-symbols-outlined">menu</span>
+				</button>
+			</div>
+		</header>
+		<main class="flex-1">
+			<section class="relative overflow-hidden bg-white px-4 py-12 md:py-20 lg:px-40">
+				<div class="absolute -left-10 top-20 h-32 w-32 rounded-full bg-yellow-200 opacity-50 blur-3xl"></div>
+				<div class="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-primary/20 opacity-50 blur-3xl"></div>
+				<div class="relative mx-auto flex max-w-5xl flex-col items-center gap-10 md:flex-row md:justify-between">
+					<div class="flex flex-1 flex-col gap-6 text-center md:text-left">
+						<div class="inline-flex w-fit items-center gap-2 rounded-full bg-yellow-100 px-4 py-1.5 text-yellow-700 mx-auto md:mx-0">
+							<span class="material-symbols-outlined text-lg">emoji_events</span>
+							<span class="text-xs font-bold uppercase tracking-wide">Siswa Berprestasi Bulan Ini</span>
+						</div>
+						<h1 class="text-4xl font-black leading-tight tracking-tight text-[#111418] md:text-5xl lg:text-6xl">
+							Selamat kepada <span class="text-primary">Budi Santoso!</span>
+						</h1>
+						<p class="text-lg font-medium leading-relaxed text-gray-600 md:text-xl">
+							Bintang Kelas 4 kita telah menunjukkan kebaikan yang luar biasa kepada teman-teman dan
+							keunggulan dalam Pameran Sains. Teruslah bersinar, Budi!
+						</p>
+						<div class="flex flex-col gap-3 sm:flex-row justify-center md:justify-start">
+							<button
+								class="flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-8 text-base font-bold text-white shadow-lg transition-transform hover:scale-105"
+								type="button"
+							>
+								<span class="material-symbols-outlined">auto_stories</span>
+								Baca Cerita Budi
+							</button>
+							<button
+								class="flex h-12 items-center justify-center gap-2 rounded-full bg-white border-2 border-gray-200 px-8 text-base font-bold text-gray-700 hover:bg-gray-50 transition-colors"
+								type="button"
+							>
+								<span class="material-symbols-outlined">history_edu</span>
+								Lihat Pemenang Lalu
+							</button>
+						</div>
+					</div>
+					<div class="relative flex-shrink-0">
+						<div class="absolute -inset-4 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-500 opacity-30 blur-lg animate-pulse"></div>
+						<div
+							class="relative flex h-64 w-64 items-center justify-center rounded-full border-[8px] border-yellow-400 bg-white shadow-[0_0_40px_rgba(250,204,21,0.5)] ring-4 ring-yellow-200 ring-offset-4 ring-offset-yellow-100 md:h-80 md:w-80 overflow-hidden"
+						>
+							<div
+								class="h-full w-full bg-cover bg-center"
+								data-alt="Budi Santoso smiling holding a book"
+								style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBP31zG3o8Zm5-v28Hg_L4VW20iVnupazff00LdLWGLdsBZ0rzIjLwuXl4EPU7XqvW_f4oLjuVy8FbaHUowAm5rmvKBojohWuTzDVshkDisZdPP9XyGhTpxehO-UIdL94vth2g1pdvUL79ZgbFITb8E_-65yqDCFKjAsfCoKeRrRLAfjKFGFRRNjkfhbEU3HIyCzTmUUDrGj8Xf58PcboSfPSMcarI3Ns8MDMaSFYCKxli9LyY6R284pyibsGCO52iO0h7UJ-kCzOg");'
+							></div>
+							<div
+								class="absolute -bottom-2 right-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-b from-yellow-300 to-yellow-500 text-white shadow-lg border-4 border-white"
+							>
+								<span class="material-symbols-outlined text-4xl drop-shadow-sm">trophy</span>
+							</div>
+						</div>
+						<div class="absolute top-0 right-10 text-yellow-400 animate-bounce" style="animation-duration: 2s;">
+							<span class="material-symbols-outlined text-4xl">spark</span>
+						</div>
+						<div class="absolute bottom-10 -left-6 text-yellow-400 animate-bounce" style="animation-duration: 3s;">
+							<span class="material-symbols-outlined text-3xl">star</span>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="cork-texture relative w-full py-16 px-4 border-t-8 border-yellow-700/20 shadow-inner">
+				<div class="mx-auto max-w-7xl">
+					<div class="mb-12 flex flex-col items-center gap-8">
+						<div class="rounded-xl bg-white/90 px-8 py-4 text-center shadow-lg backdrop-blur-sm -rotate-1 border border-gray-200">
+							<h2 class="text-3xl font-black text-[#111418] md:text-4xl">Keseruan &amp; Aktivitas Siswa</h2>
+							<p class="mt-2 text-gray-600 font-medium">Lihat apa saja yang kami lakukan minggu ini!</p>
+						</div>
+						<div class="flex flex-wrap justify-center gap-4">
+							<button
+								class="group flex items-center gap-2 rounded-full bg-white px-6 py-3 shadow-md hover:bg-gray-50 transition-all hover:-translate-y-1"
+								type="button"
+							>
+								<span class="material-symbols-outlined text-gray-400 group-hover:text-gray-600">grid_view</span>
+								<span class="font-bold text-gray-600">Semua</span>
+							</button>
+							<button
+								class="group flex items-center gap-2 rounded-full bg-[#ff6b6b] px-6 py-3 text-white shadow-md hover:bg-[#fa5252] transition-all hover:-translate-y-1 hover:rotate-2"
+								type="button"
+							>
+								<span class="material-symbols-outlined">sports_soccer</span>
+								<span class="font-bold">Olahraga</span>
+							</button>
+							<button
+								class="group flex items-center gap-2 rounded-full bg-[#fcc419] px-6 py-3 text-white shadow-md hover:bg-[#fab005] transition-all hover:-translate-y-1 hover:-rotate-2"
+								type="button"
+							>
+								<span class="material-symbols-outlined">palette</span>
+								<span class="font-bold">Seni</span>
+							</button>
+							<button
+								class="group flex items-center gap-2 rounded-full bg-[#51cf66] px-6 py-3 text-white shadow-md hover:bg-[#40c057] transition-all hover:-translate-y-1 hover:rotate-1"
+								type="button"
+							>
+								<span class="material-symbols-outlined">science</span>
+								<span class="font-bold">Sains</span>
+							</button>
+						</div>
+					</div>
+					<div class="columns-1 gap-6 sm:columns-2 lg:columns-3 xl:columns-4 space-y-6">
+						<div class="break-inside-avoid relative hover-lift transition-transform duration-300 rotate-neg-1">
+							<div class="pin pin-blue absolute -top-3 left-1/2 z-20 h-5 w-5 -translate-x-1/2 rounded-full"></div>
+							<div class="relative flex flex-col bg-white p-3 pb-8 shadow-polaroid">
+								<div class="aspect-[4/3] w-full overflow-hidden bg-gray-100 mb-4">
+									<div
+										class="h-full w-full bg-cover bg-center transition-transform hover:scale-110 duration-700"
+										data-alt="Kids playing soccer on a green field"
+										style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAkLajToNwQsjzb5Ws6lSHGtQaeEPSJe3TJ8Y4zZd86ZafMWcFkMui-T00eAvoB7IdOUgNEkP8ZEc99iMEbFSi96PFqX0WOTVyg7yw40uZQ8xtKjAkQ87hOGsof83L5PxIQLXxrWspoRlzMTTVBNmIEgyqTG8auaIb6TliBWbgqwGxhqlreJnwGBMB1z2i8sgBrhq81c5FgZ59YIUaWAeAwTF1cIHL_4l42zj8wEEk_Ah38j9xE1xmSbRbkBIHfB8EqpyqrHQo2zBI");'
+									></div>
+								</div>
+								<div class="text-center font-display">
+									<p class="text-lg font-bold text-gray-800" style="font-family: 'Lexend', cursive;">
+										Kelas 3A Menang Bola! ⚽
+									</p>
+									<p class="text-xs text-gray-400 mt-1">12 Okt 2023</p>
+								</div>
+							</div>
+						</div>
+						<div class="break-inside-avoid relative hover-lift transition-transform duration-300 rotate-pos-2 mt-8">
+							<div class="tape absolute -top-3 -left-3 z-20 h-8 w-24 rotate-[315deg]"></div>
+							<div class="tape absolute -top-3 -right-3 z-20 h-8 w-24 rotate-[45deg]"></div>
+							<div class="relative flex flex-col bg-[#fffdf5] p-6 shadow-md border border-gray-100">
+								<h3 class="text-xl font-bold text-gray-800 mb-2">Roket Saya 🚀</h3>
+								<div class="aspect-square w-full bg-white border-2 border-dashed border-gray-200 p-2 mb-2">
+									<div
+										class="h-full w-full bg-contain bg-no-repeat bg-center"
+										data-alt="Child's drawing of a rocket ship"
+										style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_D3GHaTyUHuhJRV8I3s6mNzqw7JtPkfhwOqDNegqsCJvVyD6YMytXO-Ko7XMAh2iHcELhEB6ioFCHsPLc6jZaaVcKOW397d6vYpmqK95J7e9YwdrCQSVWf7Pg5MZfTwOBHRjEbp35K318w1noEYz_OShXlu7EHP_mMDr9bnjTVfQHywxY2pL3RhzNa4H8-B91tSeW2gS5GpUsldhdDbbO2j4BdFqecbgiRjyXnXf7re8cD3XRXDxJ7du42UTj81LIq5e_39MdaZg");'
+									></div>
+								</div>
+								<div class="flex justify-between items-end mt-2">
+									<span class="text-sm font-semibold text-gray-500">Oleh Ani (Kelas 2)</span>
+									<div class="h-8 w-8 rounded-full bg-yellow-400 flex items-center justify-center text-white">
+										<span class="material-symbols-outlined text-sm">star</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="break-inside-avoid relative hover-lift transition-transform duration-300 rotate-neg-1">
+							<div
+								class="flex flex-col items-center justify-center bg-white rounded-full p-6 shadow-sticker border-4 border-[#51cf66] h-64 w-64 mx-auto text-center relative overflow-hidden"
+							>
+								<div class="absolute inset-0 bg-green-50 opacity-50"></div>
+								<span class="material-symbols-outlined text-6xl text-[#51cf66] mb-2 relative z-10">science</span>
+								<h3 class="text-xl font-black text-gray-800 relative z-10">Pemenang Sains</h3>
+								<p class="text-sm font-medium text-gray-500 relative z-10 mt-1">Diberikan kepada</p>
+								<p class="text-lg font-bold text-[#51cf66] relative z-10">Kelompok 4</p>
+								<div class="absolute top-0 -left-10 w-20 h-64 bg-white opacity-20 rotate-[20deg] transform translate-x-10"></div>
+							</div>
+						</div>
+						<div class="break-inside-avoid relative hover-lift transition-transform duration-300 rotate-pos-1">
+							<div class="pin pin-yellow absolute -top-3 left-1/2 z-20 h-5 w-5 -translate-x-1/2 rounded-full"></div>
+							<div class="relative flex flex-col bg-white p-3 pb-8 shadow-polaroid">
+								<div class="aspect-[4/3] w-full overflow-hidden bg-gray-100 mb-4">
+									<div
+										class="h-full w-full bg-cover bg-center"
+										data-alt="Children gathering in a circle during an event"
+										style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiJBBBhZNc889aT4SdvEIvfT0h0CjQ7oSQ83VGO5bMipoTOm6Ka95x9qOG6t8wd-QppeXEvRgO7sLxpKM_7Tyvi2XvoOxx_xhV2AQ-ptFlqMDrEvn7WSP76XaX1joY-HeCvy8rOjcY4zsoC6KQNMRFJzrzERXJIDSMQhBcJ3WpnyFiR0lYot9_5NRiValWo8rdTgJQrLe2Gxc4atZso1NC3XyLi4VbBl6Vk0dK_jf9F-Hpvi-vq-6xb7HImzeRwPT9zzXkp00b3s0");'
+									></div>
+								</div>
+								<div class="text-center font-display">
+									<p class="text-lg font-bold text-gray-800">Apel Pagi ☀️</p>
+								</div>
+							</div>
+						</div>
+						<div class="break-inside-avoid relative hover-lift transition-transform duration-300 rotate-neg-2 pt-4">
+							<div class="pin absolute -top-0 left-1/2 z-20 h-5 w-5 -translate-x-1/2 rounded-full"></div>
+							<div class="relative flex flex-col bg-[#ffec99] p-6 shadow-md rounded-br-[3rem]">
+								<span class="material-symbols-outlined text-4xl text-yellow-600 mb-2">campaign</span>
+								<h3 class="text-xl font-bold text-gray-900 mb-2">Jangan Lupa!</h3>
+								<p class="text-gray-800 font-medium">
+									Jumat depan adalah Hari Piyama! Pakai piyama ternyamanmu ke sekolah.
+								</p>
+								<p class="text-sm text-yellow-800 font-bold mt-4 text-right">- Bapak Kepala Sekolah</p>
+							</div>
+						</div>
+						<div class="break-inside-avoid relative hover-lift transition-transform duration-300 rotate-pos-2 mt-4">
+							<div class="tape absolute -top-3 left-1/2 -translate-x-1/2 z-20 h-8 w-24 rotate-0"></div>
+							<div class="relative flex flex-col bg-white p-4 shadow-md">
+								<div class="aspect-[3/4] w-full bg-gray-50 border border-gray-100 p-2 mb-2">
+									<div
+										class="h-full w-full bg-contain bg-no-repeat bg-center"
+										data-alt="Drawing of a colorful flower garden"
+										style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBBFU0LutRgCu49Bt0YRlDEDjz5WhZV9XThWAfnhXmmri-Mm78sZF1vhXmlz9hedHCiVr-q9FsouiJYqlSgzXS3NLWw95MoeqBqE0Z0hB6bZFZPuop377WIOy1JZh-eun4yu2IzWetgouw4IrNLcqJ1wrHgU-LRgf8BHpCsndhNb9eEHLjp2-pITmNclybkhBYlnNvM10CDI_gseKCKTnsbY7LBUpESY22k14TDDTGgW3esiYwVg9C6pdD-staTy0V-I3ufKoUs9QM");'
+									></div>
+								</div>
+								<div class="text-center">
+									<span class="text-sm font-bold text-gray-600">"Kebunku" oleh Sarah</span>
+								</div>
+							</div>
+						</div>
+						<div class="break-inside-avoid relative hover-lift transition-transform duration-300 rotate-neg-1">
+							<div
+								class="flex flex-col items-center justify-center bg-[#258cf4] rounded-xl p-6 shadow-sticker border-b-8 border-[#1864ab] text-center relative text-white"
+							>
+								<div class="flex items-center justify-center h-16 w-16 bg-white/20 rounded-full mb-3 backdrop-blur-sm">
+									<span class="material-symbols-outlined text-4xl">directions_run</span>
+								</div>
+								<h3 class="text-xl font-black mb-1">Pelari Tercepat</h3>
+								<p class="text-sm opacity-90">Hari Olahraga 2023</p>
+								<div class="mt-4 bg-white/20 px-3 py-1 rounded-full text-xs font-bold">Medali Emas</div>
+							</div>
+						</div>
+					</div>
+					<div class="mt-16 flex justify-center">
+						<button
+							class="group relative flex items-center gap-3 overflow-hidden rounded-full bg-white py-4 px-8 text-lg font-bold text-primary shadow-lg transition-all hover:-translate-y-1 hover:shadow-xl"
+							type="button"
+						>
+							<span class="material-symbols-outlined transition-transform group-hover:rotate-180">refresh</span>
+							Lihat Lebih Banyak
+							<div class="absolute inset-0 -z-10 bg-gradient-to-r from-blue-50 to-blue-100 opacity-0 transition-opacity group-hover:opacity-100"></div>
+						</button>
+					</div>
+				</div>
+			</section>
+			<section class="bg-primary px-4 py-16 text-center text-white">
+				<div class="mx-auto max-w-3xl">
+					<div class="mb-6 inline-flex items-center justify-center rounded-full bg-white/20 p-4 backdrop-blur-sm">
+						<span class="material-symbols-outlined text-4xl">brush</span>
+					</div>
+					<h2 class="mb-4 text-3xl font-black md:text-4xl">Punya sesuatu yang keren?</h2>
+					<p class="mb-8 text-lg font-medium text-blue-100">
+						Kirimkan gambar, foto, atau ceritamu untuk dipajang di mading!
+					</p>
+					<button
+						class="inline-flex h-14 items-center justify-center rounded-full bg-white px-8 text-lg font-bold text-primary shadow-lg transition-transform hover:scale-105 hover:bg-gray-50"
+						type="button"
+					>
+						Unggah Karyamu
+					</button>
+				</div>
+			</section>
+		</main>
+		<footer class="bg-background-dark py-12 text-white">
+			<div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-6 md:flex-row">
+				<div class="flex flex-col gap-2">
+					<div class="flex items-center gap-2">
+						<span class="material-symbols-outlined text-3xl text-primary">school</span>
+						<span class="text-2xl font-bold">SDN Klagen 1</span>
+					</div>
+					<p class="text-sm text-gray-400">Belajar, Tumbuh, dan Bersenang-senang Bersama.</p>
+				</div>
+				<div class="flex gap-8 text-sm font-medium text-gray-400">
+					<a class="hover:text-white transition-colors" href="#">Privasi</a>
+					<a class="hover:text-white transition-colors" href="#">Ketentuan</a>
+					<a class="hover:text-white transition-colors" href="#">Hubungi Guru</a>
+				</div>
+				<div class="flex gap-4">
+					<a
+						class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-white transition-colors hover:bg-primary"
+						href="#"
+					>
+						<span class="sr-only">Facebook</span>
+						<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+							<path
+								d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.791-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+							></path>
+						</svg>
+					</a>
+					<a
+						class="flex h-10 w-10 items-center justify-center rounded-full bg-gray-800 text-white transition-colors hover:bg-primary"
+						href="#"
+					>
+						<span class="sr-only">Instagram</span>
+						<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+							<path
+								d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+							></path>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</footer>
+	</div>
+</Layout>

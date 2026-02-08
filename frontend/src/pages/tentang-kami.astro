@@ -1,0 +1,387 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<Layout
+	title="Petualangan Sekolah Kami - SDN Klagen 1"
+	bodyClass="bg-[#f5f7f8] dark:bg-background-dark text-[#111418] dark:text-white transition-colors duration-200"
+>
+	<header
+		class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f0f2f5] dark:border-gray-800 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md px-4 sm:px-10 py-3 transition-colors"
+	>
+		<div class="flex items-center gap-4 text-[#111418] dark:text-white">
+			<div class="size-8 text-primary">
+				<span class="material-symbols-outlined text-3xl">school</span>
+			</div>
+			<h2 class="text-[#111418] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">
+				SDN Klagen 1
+			</h2>
+		</div>
+		<div class="hidden md:flex flex-1 justify-end gap-6">
+			<div class="flex items-center gap-3">
+				<a
+					class:list={[
+						"px-5 py-2 bg-red-500 hover:bg-red-600 text-white rounded-full text-sm font-bold shadow-md transition-all hover:scale-105 hover:shadow-lg",
+						{ "nav-active": pathname === "/" }
+					]}
+					href="/"
+					aria-current={pathname === "/" ? "page" : undefined}
+				>
+					Beranda
+				</a>
+				<a
+					class:list={[
+						"px-5 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-full text-sm font-bold shadow-md transition-all hover:scale-105 hover:shadow-lg",
+						{ "nav-active": pathname === "/tentang-kami" }
+					]}
+					href="/tentang-kami"
+					aria-current={pathname === "/tentang-kami" ? "page" : undefined}
+				>
+					Tentang Kami
+				</a>
+				<a
+					class:list={[
+						"px-5 py-2 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 rounded-full text-sm font-bold shadow-md transition-all hover:scale-105 hover:shadow-lg",
+						{ "nav-active": pathname === "/galeri" }
+					]}
+					href="/galeri"
+					aria-current={pathname === "/galeri" ? "page" : undefined}
+				>
+					Galeri
+				</a>
+				<a
+					class:list={[
+						"px-5 py-2 bg-green-500 hover:bg-green-600 text-white rounded-full text-sm font-bold shadow-md transition-all hover:scale-105 hover:shadow-lg",
+						{ "nav-active": pathname === "/kontak" }
+					]}
+					href="/kontak"
+					aria-current={pathname === "/kontak" ? "page" : undefined}
+				>
+					Kontak
+				</a>
+			</div>
+			<button
+				class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary/90 transition-all transform hover:scale-105 text-white text-sm font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/30"
+				type="button"
+			>
+				<span class="truncate">Daftar Sekarang</span>
+			</button>
+		</div>
+		<div class="md:hidden text-[#111418] dark:text-white">
+			<span class="material-symbols-outlined">menu</span>
+		</div>
+	</header>
+
+	<main class="flex flex-col items-center w-full">
+		<section class="w-full relative overflow-hidden bg-primary/5 dark:bg-primary/10 pt-10 pb-20 px-4 text-center">
+			<div class="absolute top-10 left-[-5%] w-64 h-64 bg-blue-200/40 dark:bg-blue-900/20 blob-shape-1 blur-3xl -z-10"></div>
+			<div class="absolute bottom-10 right-[-5%] w-80 h-80 bg-green-200/40 dark:bg-green-900/20 blob-shape-2 blur-3xl -z-10"></div>
+			<div class="max-w-[800px] mx-auto flex flex-col items-center gap-6 mt-8">
+				<span
+					class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-gray-800 border border-blue-100 dark:border-gray-700 shadow-sm text-primary font-bold text-sm tracking-wide uppercase animate-bounce"
+				>
+					<span class="material-symbols-outlined text-lg">explore</span>
+					Mulai Petualangan
+				</span>
+				<h1 class="text-4xl md:text-6xl font-black text-[#111418] dark:text-white leading-tight tracking-tight">
+					Petualangan
+					<span class="text-primary inline-block transform hover:rotate-2 transition-transform cursor-default">
+						Sekolah Kami
+					</span>
+				</h1>
+				<p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl leading-relaxed">
+					Selamat datang di dunia ajaib SDN Klagen 1! Ambil tas ransel dan petamu, kita akan berpetualang
+					untuk menemukan tempat di mana belajar menjadi hidup.
+				</p>
+				<div class="mt-8 relative w-full max-w-4xl aspect-[16/9] group">
+					<div
+						class="absolute inset-0 bg-primary rounded-[2rem] transform rotate-2 group-hover:rotate-1 transition-transform duration-500 opacity-20"
+					></div>
+					<div
+						class="absolute inset-0 bg-yellow-400 rounded-[2rem] transform -rotate-2 group-hover:-rotate-1 transition-transform duration-500 opacity-20"
+					></div>
+					<div class="relative h-full w-full rounded-[2rem] overflow-hidden shadow-xl border-4 border-white dark:border-gray-700">
+						<div
+							class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 flex flex-col justify-end p-8 text-left"
+						>
+							<h3 class="text-white text-2xl font-bold">Kerajaan Ajaib</h3>
+							<p class="text-white/90">Di mana setiap hari adalah cerita baru.</p>
+						</div>
+						<img
+							alt="data-alt: A vibrant cartoon-style illustration of a happy primary school building surrounded by green trees and blue sky"
+							class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+							src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSCzbCM3PPrcioYR-QBMvhRtZxHCIKsmBl5_pT2JyjWicl9LyyaNhwBYqUtKR3FFvUahp5Q-TXpX8UvJBB5hOwy_7I7wsC88dptXcALPOkDAuIjkRNspS9BDm-Q3oniffJKiqk73K_VeEl_5-9iRZwSE2rQIAMgZiHl7WvA3_nKIddOVdno4ovCDPHLwL-zHh3ILwv63JR2zudY5LNxMHkEDGO8s7oeRP79XezW9lE-vZm0Pryv22jJ8tX-wavPAHWarYYMPw9foU"
+						/>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="w-full px-4 -mt-12 z-20 mb-20">
+			<div
+				class="max-w-3xl mx-auto bg-white dark:bg-gray-800 p-8 md:p-12 rounded-[3rem] shadow-xl border border-gray-100 dark:border-gray-700 text-center relative"
+			>
+				<span class="absolute -top-6 left-1/2 -translate-x-1/2 bg-yellow-400 text-yellow-900 p-3 rounded-full shadow-lg">
+					<span class="material-symbols-outlined text-3xl">auto_awesome</span>
+				</span>
+				<h2 class="text-2xl font-bold mb-4 text-[#111418] dark:text-white">Tempat untuk Tumbuh &amp; Bersinar</h2>
+				<p class="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+					Di SDN Klagen 1, kami percaya setiap anak adalah pahlawan super dalam pelatihan. Misi kami adalah
+					menyediakan lingkungan yang aman, menyenangkan, dan menginspirasi di mana rasa ingin tahu mekar
+					menjadi pengetahuan.
+				</p>
+			</div>
+		</section>
+
+		<section class="w-full max-w-5xl px-4 py-10 relative">
+			<h2 class="text-3xl font-black text-center mb-16 text-[#111418] dark:text-white">Ikuti Jejak Kami</h2>
+			<div class="relative timeline-path space-y-24">
+				<div class="relative flex md:flex-row flex-col items-center justify-between group">
+					<div
+						class="w-full md:w-[45%] bg-green-50 dark:bg-green-900/20 p-6 rounded-[2rem] rounded-tr-none border-2 border-green-100 dark:border-green-800 hover:shadow-lg transition-shadow relative order-2 md:order-1 mt-6 md:mt-0"
+					>
+						<div class="text-green-600 dark:text-green-400 font-bold text-xl mb-2">1995: Awal Mula</div>
+						<p class="text-gray-600 dark:text-gray-300">
+							Petualangan kami dimulai hanya dengan dua ruang kelas dan mimpi besar. Seperti benih kecil,
+							kami mulai dari yang kecil tapi dengan potensi yang luar biasa!
+						</p>
+						<div class="hidden md:block absolute top-1/2 -right-12 w-12 h-1 bg-green-200 dark:bg-green-800"></div>
+					</div>
+					<div class="absolute left-1/2 top-0 md:top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 md:order-2">
+						<div
+							class="w-16 h-16 bg-white dark:bg-gray-800 border-4 border-green-400 rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform"
+						>
+							<span class="material-symbols-outlined text-green-500 text-3xl">local_florist</span>
+						</div>
+					</div>
+					<div class="w-full md:w-[45%] order-3 hidden md:block"></div>
+				</div>
+				<div class="relative flex md:flex-row flex-col items-center justify-between group">
+					<div class="w-full md:w-[45%] hidden md:block"></div>
+					<div class="absolute left-1/2 top-0 md:top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+						<div
+							class="w-16 h-16 bg-white dark:bg-gray-800 border-4 border-yellow-400 rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform"
+						>
+							<span class="material-symbols-outlined text-yellow-500 text-3xl">menu_book</span>
+						</div>
+					</div>
+					<div
+						class="w-full md:w-[45%] bg-yellow-50 dark:bg-yellow-900/20 p-6 rounded-[2rem] rounded-tl-none border-2 border-yellow-100 dark:border-yellow-800 hover:shadow-lg transition-shadow relative mt-6 md:mt-0"
+					>
+						<div class="text-yellow-700 dark:text-yellow-400 font-bold text-xl mb-2">2010: Perpustakaan Berkembang</div>
+						<p class="text-gray-600 dark:text-gray-300">
+							Kami membuka perpustakaan ajaib kami! Rak-rak penuh dengan cerita naga, antariksa, dan sains.
+							Renovasi besar memberi kami ruang untuk terbang.
+						</p>
+						<div class="hidden md:block absolute top-1/2 -left-12 w-12 h-1 bg-yellow-200 dark:bg-yellow-800"></div>
+					</div>
+				</div>
+				<div class="relative flex md:flex-row flex-col items-center justify-between group">
+					<div
+						class="w-full md:w-[45%] bg-primary/10 dark:bg-blue-900/20 p-6 rounded-[2rem] rounded-tr-none border-2 border-blue-100 dark:border-blue-800 hover:shadow-lg transition-shadow relative order-2 md:order-1 mt-6 md:mt-0"
+					>
+						<div class="text-primary dark:text-blue-400 font-bold text-xl mb-2">Masa Kini: Kami Sedang Mekar!</div>
+						<p class="text-gray-600 dark:text-gray-300">
+							Kini menjadi sekolah unggulan dengan taman bagi pikiran-pikiran muda yang cerdas. Kami
+							digital, kreatif, dan siap menyambut masa depan!
+						</p>
+						<div class="hidden md:block absolute top-1/2 -right-12 w-12 h-1 bg-blue-200 dark:bg-blue-800"></div>
+					</div>
+					<div class="absolute left-1/2 top-0 md:top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 md:order-2">
+						<div
+							class="w-16 h-16 bg-white dark:bg-gray-800 border-4 border-primary rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform"
+						>
+							<span class="material-symbols-outlined text-primary text-3xl">school</span>
+						</div>
+					</div>
+					<div class="w-full md:w-[45%] order-3 hidden md:block"></div>
+				</div>
+			</div>
+			<div class="flex justify-center mt-12">
+				<div class="bg-primary text-white px-6 py-3 rounded-full shadow-lg font-bold flex items-center gap-2 animate-pulse">
+					<span class="material-symbols-outlined">flag</span>
+					Tujuan: Kesuksesan!
+				</div>
+			</div>
+		</section>
+
+		<section class="w-full bg-white dark:bg-gray-900 py-20 px-4 mt-20 relative overflow-hidden">
+			<div class="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
+				<svg
+					class="relative block w-[calc(100%+1.3px)] h-[60px] fill-background-light dark:fill-background-dark"
+					data-name="Layer 1"
+					preserveAspectRatio="none"
+					viewBox="0 0 1200 120"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+					></path>
+				</svg>
+			</div>
+			<div class="max-w-6xl mx-auto text-center z-10 relative">
+				<div class="mb-12">
+					<h2 class="text-[#111418] dark:text-white text-4xl font-black mb-4">Pahlawan Sekolah Kami</h2>
+					<p class="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+						Mereka bukan sekadar guru; mereka adalah penyihir, kapten, dan ratu pengetahuan yang membimbing
+						siswa kami setiap hari.
+					</p>
+				</div>
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+					<div class="group flex flex-col items-center">
+						<div
+							class="w-40 h-40 rounded-full border-4 border-purple-200 dark:border-purple-800 overflow-hidden mb-4 shadow-xl group-hover:scale-105 transition-transform bg-purple-50"
+						>
+							<img
+								class="w-full h-full object-cover"
+								data-alt="Portrait of a smiling female teacher with glasses"
+								src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnbWYnxuackiQC6hu0jO4qBpS73zcERhZ2wsuSqrSogoGj7vjOiM83rkGym_-Y29LCS467wrer3TK_vcB9uBt90zgwGELqnkM1r6iWTuNouBIhBZ2_e8VDmWvp9LtNgW0eQZ96qW3KCXRFJG9ulYHs_OnWPvdgXGvwKngNKwMAcJbNdy0zdXrixpkbi0yffZvHRB1QDWBXIAHI4IukW5FIgZD2cIN_UhV9TFh35tvYpUfpSzdy3L86db3DZiSGGpCtm8d5oELfjJ8"
+							/>
+						</div>
+						<h3 class="text-xl font-bold text-[#111418] dark:text-white">Ibu Sari</h3>
+						<span
+							class="inline-block bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 text-xs px-3 py-1 rounded-full font-bold mb-2 mt-1"
+						>
+							Penyihir Matematika
+						</span>
+						<p class="text-gray-500 dark:text-gray-400 text-sm px-4">
+							Dia bisa membuat angka menari dan pecahan jadi menyenangkan!
+						</p>
+					</div>
+					<div class="group flex flex-col items-center">
+						<div
+							class="w-40 h-40 rounded-full border-4 border-blue-200 dark:border-blue-800 overflow-hidden mb-4 shadow-xl group-hover:scale-105 transition-transform bg-blue-50"
+						>
+							<img
+								class="w-full h-full object-cover"
+								data-alt="Portrait of a friendly male teacher in a science lab coat"
+								src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv8IBfuTabWacyGurQyIKgCzYcv6ajmuvCScrf5wZxEVi__d0XFPAYyzOF38J3PJLSJiw1U4VFR-dAsCI6YFvNwfSUggZZ8HZohlnP7ur8whXr0OgTuA6ABY8zvDRuEoglNFPGfQjKUGvyN16nxnrmtCEOatsyjLvL0zyivc6xyzcuaUxvm4l__jkyO9kVrFD2GeakyK9F0RDzQdgf1dFoTjrpFf_lFNCWXuOUc9E_poBlAKs3JfNMmSn-HCu_7kzkCItvUM0HQY0"
+							/>
+						</div>
+						<h3 class="text-xl font-bold text-[#111418] dark:text-white">Bapak Budi</h3>
+						<span
+							class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs px-3 py-1 rounded-full font-bold mb-2 mt-1"
+						>
+							Kapten Sains
+						</span>
+						<p class="text-gray-500 dark:text-gray-400 text-sm px-4">
+							Gunung meletus dan perjalanan antariksa adalah keahliannya.
+						</p>
+					</div>
+					<div class="group flex flex-col items-center">
+						<div
+							class="w-40 h-40 rounded-full border-4 border-pink-200 dark:border-pink-800 overflow-hidden mb-4 shadow-xl group-hover:scale-105 transition-transform bg-pink-50"
+						>
+							<img
+								class="w-full h-full object-cover"
+								data-alt="Portrait of a female teacher holding a storybook"
+								src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6hWI5APc44VOBtL7r0OXd9NiHrGvEkMjkrrHhvnKC0CYdL9yyM3_LLQE5BXv0D9mrCT3ewFnzQPLghq347NWnuLMziyDiXrLWKmvP5V_Z8ZIxZhD99JB7TF7SsBhkKZQfXPqkJwHbiqm3gwkp_OwzY7MzsD_4ncPFGJLJMI_UWsIvYCGkimt1aCIq08DwrD2s530voRdAmlKSUsHo2w1sL6fJEoBSIZkceaA8Rmh_-8gAhyFcYir9y73nMhKjXsykLB9fKo2pCgA"
+							/>
+						</div>
+						<h3 class="text-xl font-bold text-[#111418] dark:text-white">Ibu Rina</h3>
+						<span
+							class="inline-block bg-pink-100 dark:bg-pink-900 text-pink-700 dark:text-pink-300 text-xs px-3 py-1 rounded-full font-bold mb-2 mt-1"
+						>
+							Ratu Pendongeng
+						</span>
+						<p class="text-gray-500 dark:text-gray-400 text-sm px-4">
+							Suaranya mengubah kata-kata menjadi dunia ajaib.
+						</p>
+					</div>
+					<div class="group flex flex-col items-center">
+						<div
+							class="w-40 h-40 rounded-full border-4 border-orange-200 dark:border-orange-800 overflow-hidden mb-4 shadow-xl group-hover:scale-105 transition-transform bg-orange-50"
+						>
+							<img
+								class="w-full h-full object-cover"
+								data-alt="Portrait of a male sports teacher with a whistle"
+								src="https://lh3.googleusercontent.com/aida-public/AB6AXuDss5NoEP_CXn_jF6M4hIFdEvyAAI-ACU3GQIR9I3kVtBQ3JQik0bltwbftodjB4DkPAMoWPjZW4m_hNNEU8F7odhSK7xEi3o50Py5XPduciv-WjzPOeInMduMjabv8ag7IYarg-AoosOvxf7_7biVQoJ9zXYh-sZquAdAW3licdDJeQ7E6O6vSwA9wp1OHCHd27ajngY1NaiH2I9mi3Ff2mSkl7UWCq5jTwx6zK-8UtojmNSD7OiWDvBqyhcAmYr7fiYbZSo9jRi8"
+							/>
+						</div>
+						<h3 class="text-xl font-bold text-[#111418] dark:text-white">Bapak Tono</h3>
+						<span
+							class="inline-block bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 text-xs px-3 py-1 rounded-full font-bold mb-2 mt-1"
+						>
+							Juara Olahraga
+						</span>
+						<p class="text-gray-500 dark:text-gray-400 text-sm px-4">
+							Mengajarkan kita bahwa kerja sama tim mewujudkan impian!
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="w-full py-16 px-4 flex flex-col items-center bg-primary/5 dark:bg-primary/10">
+			<div class="bg-primary rounded-[3rem] p-10 max-w-4xl w-full text-center shadow-2xl relative overflow-hidden group">
+				<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+				<h2 class="text-white text-3xl md:text-5xl font-black mb-6 relative z-10">Siap Bergabung dalam Keseruan?</h2>
+				<p class="text-blue-100 text-lg mb-8 max-w-xl mx-auto relative z-10">
+					Ayo kunjungi kerajaan kami! Pintu kami terbuka bagi para penjelajah yang ingin melihat keajaiban
+					ini sendiri.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+					<button
+						class="bg-white text-primary hover:bg-gray-100 font-bold py-3 px-8 rounded-full shadow-lg transition-transform hover:scale-105 flex items-center justify-center gap-2"
+						type="button"
+					>
+						<span class="material-symbols-outlined">calendar_month</span>
+						Jadwalkan Tur
+					</button>
+					<button
+						class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-full transition-transform hover:scale-105"
+						type="button"
+					>
+						Hubungi Kami
+					</button>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="bg-white dark:bg-background-dark pt-12 pb-8 border-t border-gray-100 dark:border-gray-800">
+		<div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+			<div class="col-span-1 md:col-span-2">
+				<div class="flex items-center gap-2 mb-4 text-[#111418] dark:text-white">
+					<span class="material-symbols-outlined text-primary text-3xl">school</span>
+					<span class="text-xl font-bold">SDN Klagen 1</span>
+				</div>
+				<p class="text-gray-500 dark:text-gray-400 pr-8">
+					Memberdayakan generasi penerus para pemikir, pemimpi, dan pelaksana. Terletak di jantung
+					komunitas kami yang indah.
+				</p>
+			</div>
+			<div>
+				<h4 class="font-bold text-[#111418] dark:text-white mb-4">Tautan Cepat</h4>
+				<ul class="space-y-2 text-gray-500 dark:text-gray-400 text-sm">
+					<li><a class="hover:text-primary" href="#">Pendaftaran</a></li>
+					<li><a class="hover:text-primary" href="#">Berita &amp; Acara</a></li>
+					<li><a class="hover:text-primary" href="#">Area Orang Tua</a></li>
+					<li><a class="hover:text-primary" href="#">Karir</a></li>
+				</ul>
+			</div>
+			<div>
+				<h4 class="font-bold text-[#111418] dark:text-white mb-4">Temukan Kami</h4>
+				<div class="rounded-xl overflow-hidden h-32 w-full bg-gray-200 relative mb-2">
+					<img
+						class="w-full h-full object-cover"
+						data-alt="Map view showing the location of the school in a green neighborhood"
+						data-location="Klagen"
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3A4ZwYYLBPze8fzCp9XFLbnqg-jzzJmaY-J4fZLz41wMAAHBe6cEkvKmE_410ZZoTPB3l0ux0BgQ7LfAX1kUXMsi03Fnj3lN4XJ2HS4Zai6_d2pxvPCUnYcvGHspdeGKIigK-frnmz6_fjjbGRicNX8I80Ed39W6MGEAZ-NjEgBkjvs_uFtMi0nzxBwX07L5QRR8jtbqTPHnY7GyrCUdlKn3N9kbLclLuFtlkE8071ylbDdo3Ld0TtRO3pEbx07DMk22v7iT1icU"
+					/>
+					<div
+						class="absolute inset-0 flex items-center justify-center bg-black/10 hover:bg-black/0 transition-colors pointer-events-none"
+					>
+						<span class="material-symbols-outlined text-red-500 text-3xl drop-shadow-md">location_on</span>
+					</div>
+				</div>
+				<p class="text-gray-500 dark:text-gray-400 text-xs">Jl. Pendidikan No. 123, Kota Klagen</p>
+			</div>
+		</div>
+		<div class="text-center text-gray-400 text-sm pt-8 border-t border-gray-100 dark:border-gray-800">
+			© 2023 SDN Klagen 1. Hak Cipta Dilindungi. Dibuat dengan ❤️ untuk anak-anak.
+		</div>
+	</footer>
+</Layout>

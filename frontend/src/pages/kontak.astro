@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+	title="Kontak SDN Klagen 1"
+	bodyClass="bg-[#e0f2fe] dark:bg-background-dark font-display text-[#111418] min-h-screen flex flex-col overflow-x-hidden selection:bg-primary selection:text-white"
+>
+	<header class="w-full bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b-4 border-primary/20">
+		<div class="max-w-[1280px] mx-auto px-6 py-4">
+			<div class="flex items-center justify-between">
+				<div class="flex items-center gap-3">
+					<div class="bg-primary text-white p-2 rounded-xl">
+						<span class="material-symbols-outlined text-3xl">school</span>
+					</div>
+					<div>
+						<h1 class="text-xl md:text-2xl font-black text-gray-800 tracking-tight">SDN Klagen 1</h1>
+						<p class="text-xs text-gray-500 font-medium tracking-wide uppercase">Sekolah Dasar Ceria</p>
+					</div>
+				</div>
+				<nav class="hidden md:flex items-center gap-4">
+					<a
+						class="px-5 py-2.5 rounded-full bg-blue-100 text-primary font-bold hover:bg-primary hover:text-white transition-all transform hover:scale-105 shadow-sm border border-transparent hover:border-blue-200"
+						href="/"
+					>
+						Beranda
+					</a>
+					<a
+						class="px-5 py-2.5 rounded-full bg-yellow-100 text-yellow-700 font-bold hover:bg-secondary hover:text-white transition-all transform hover:scale-105 shadow-sm border border-transparent hover:border-yellow-200"
+						href="/tentang-kami"
+					>
+						Tentang Kami
+					</a>
+					<a
+						class="px-5 py-2.5 rounded-full bg-green-100 text-green-700 font-bold hover:bg-highlight hover:text-white transition-all transform hover:scale-105 shadow-sm border border-transparent hover:border-green-200"
+						href="/galeri"
+					>
+						Galeri
+					</a>
+					<a
+						class="px-5 py-2.5 rounded-full bg-accent text-white font-bold shadow-md ring-4 ring-red-100 transform scale-105"
+						href="/kontak"
+					>
+						Kontak
+					</a>
+				</nav>
+				<button class="md:hidden text-gray-700 p-2 rounded-full hover:bg-gray-100" type="button">
+					<span class="material-symbols-outlined text-3xl">menu</span>
+				</button>
+			</div>
+		</div>
+	</header>
+
+	<main class="flex-grow flex flex-col items-center justify-center relative py-12 px-4 w-full">
+		<div
+			class="absolute top-20 left-10 text-white/40 pointer-events-none select-none hidden lg:block animate-float"
+			style="animation-delay: 1s;"
+		>
+			<span class="material-symbols-outlined text-9xl">cloud</span>
+		</div>
+		<div
+			class="absolute bottom-40 right-10 text-white/40 pointer-events-none select-none hidden lg:block animate-float"
+			style="animation-delay: 2s;"
+		>
+			<span class="material-symbols-outlined text-8xl">cloud</span>
+		</div>
+		<div class="absolute top-40 right-1/4 text-white/30 pointer-events-none select-none hidden lg:block animate-float">
+			<span class="material-symbols-outlined text-6xl">cloud</span>
+		</div>
+		<div class="max-w-[1100px] w-full mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+			<div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+				<div class="relative w-64 h-64 md:w-80 md:h-80 animate-float">
+					<img
+						class="w-full h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+						data-alt="Illustration of a cute owl postman flying with a letter"
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkAxEZISpV1x676Io5ME_ZF7yMulMRM--gq8WAsA6COaj0F34UJAzZr_Qj-k8ALm2RIjCF1gXHvrhNpB3I7ml-N_iAd4KNQDiecPIYpniyepmzo0swbGW-RlUq1Uu2hGIfo3QhiE1_I3xPxbouI3bFLOASVm63-ZwjaK_7ynQU0Azh5b7Bzq6QbFcvPMN63GjxO9Q-oAiRehO_QozQHSyQJ3cBaWuNPUP_mR0rNMiHNm-Eqrwxj-KfQP0XFsBiVZzLpOmo5t_2Hvs"
+					/>
+					<div
+						class="absolute -top-6 -right-6 bg-white p-4 rounded-tr-3xl rounded-tl-3xl rounded-br-3xl shadow-xl border-2 border-primary/20 max-w-[180px]"
+					>
+						<p class="text-sm font-bold text-gray-700 leading-tight">
+							"Pak Pos Burung Hantu siap antar suratmu!"
+						</p>
+					</div>
+				</div>
+				<div class="space-y-4 max-w-md">
+					<h2 class="text-4xl md:text-5xl font-black text-gray-800 leading-tight tracking-tight">
+						Kirim Surat ke <span class="text-primary">Sekolah!</span>
+					</h2>
+					<p class="text-lg text-gray-600 font-medium">
+						Punya pertanyaan atau cerita seru? Tulis di kertas ajaib di samping ini, Pak Pos akan segera
+						mengantarkannya!
+					</p>
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 w-full">
+						<div
+							class="bg-yellow-50 border-2 border-yellow-200 p-3 rounded-2xl flex items-center gap-3 shadow-sm transform rotate-[-2deg] hover:rotate-0 transition-transform"
+						>
+							<div class="bg-yellow-400 text-white rounded-full p-2 w-10 h-10 flex items-center justify-center shrink-0">
+								<span class="material-symbols-outlined text-xl">call</span>
+							</div>
+							<div class="text-left">
+								<p class="text-xs text-yellow-800 font-bold uppercase">Telepon</p>
+								<p class="text-sm text-gray-800 font-bold">(021) 123-4567</p>
+							</div>
+						</div>
+						<div
+							class="bg-blue-50 border-2 border-blue-200 p-3 rounded-2xl flex items-center gap-3 shadow-sm transform rotate-[2deg] hover:rotate-0 transition-transform"
+						>
+							<div class="bg-primary text-white rounded-full p-2 w-10 h-10 flex items-center justify-center shrink-0">
+								<span class="material-symbols-outlined text-xl">schedule</span>
+							</div>
+							<div class="text-left">
+								<p class="text-xs text-blue-800 font-bold uppercase">Buka</p>
+								<p class="text-sm text-gray-800 font-bold">07.00 - 13.00</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="relative w-full">
+				<div
+					class="bg-white rounded-xl shadow-2xl border border-gray-100 relative overflow-hidden transform rotate-1 hover:rotate-0 transition-all duration-500"
+				>
+					<div class="absolute top-0 left-0 w-full h-4 bg-[repeating-linear-gradient(45deg,#258cf4,#258cf4_10px,#ffffff_10px,#ffffff_20px,#ef4444_20px,#ef4444_30px,#ffffff_30px,#ffffff_40px)] opacity-60"></div>
+					<div class="p-8 md:p-10">
+						<div class="flex justify-between items-start mb-8">
+							<div>
+								<h3 class="text-2xl font-black text-gray-800 mb-1">Halo Pak Guru!</h3>
+								<p class="text-gray-500 font-medium text-sm">Isi formulir ini ya...</p>
+							</div>
+							<div
+								class="stamp-edge w-20 h-24 flex flex-col items-center justify-center text-white rotate-6 shadow-lg transform hover:scale-110 transition-transform cursor-pointer"
+							>
+								<span class="material-symbols-outlined text-4xl mb-1">local_post_office</span>
+								<span class="text-[10px] font-bold uppercase tracking-wider">Klagen 1</span>
+							</div>
+						</div>
+						<form class="flex flex-col gap-6">
+							<div class="relative group">
+								<label class="block text-primary font-bold mb-1 text-sm uppercase tracking-wide">
+									Siapa Namamu?
+								</label>
+								<div class="relative">
+									<span class="material-symbols-outlined absolute left-0 bottom-3 text-gray-400 group-focus-within:text-primary transition-colors">
+										person
+									</span>
+									<input
+										class="w-full pl-8 pr-4 py-2 bg-transparent border-0 border-b-2 border-blue-200 focus:border-primary focus:ring-0 text-lg font-medium text-gray-700 placeholder-gray-300 transition-colors"
+										placeholder="Tulis namamu di sini..."
+										type="text"
+									/>
+								</div>
+							</div>
+							<div class="relative group">
+								<label class="block text-primary font-bold mb-1 text-sm uppercase tracking-wide">
+									Email (Punya Orang Tua)
+								</label>
+								<div class="relative">
+									<span class="material-symbols-outlined absolute left-0 bottom-3 text-gray-400 group-focus-within:text-primary transition-colors">
+										alternate_email
+									</span>
+									<input
+										class="w-full pl-8 pr-4 py-2 bg-transparent border-0 border-b-2 border-blue-200 focus:border-primary focus:ring-0 text-lg font-medium text-gray-700 placeholder-gray-300 transition-colors"
+										placeholder="contoh@email.com"
+										type="email"
+									/>
+								</div>
+							</div>
+							<div class="relative group mt-2">
+								<label class="block text-primary font-bold mb-1 text-sm uppercase tracking-wide">
+									Pesan Untuk Sekolah
+								</label>
+								<div class="relative bg-yellow-50 rounded-lg border border-yellow-200 p-1 shadow-inner">
+									<textarea
+										class="w-full bg-notebook-lines bg-local border-none focus:ring-0 text-lg leading-[32px] text-gray-700 font-handwriting resize-none bg-transparent px-4"
+										placeholder="Tulis ceritamu di baris ini..."
+										rows="5"
+										style="background-attachment: local;"
+									></textarea>
+								</div>
+							</div>
+							<div class="mt-4 flex justify-end">
+								<button
+									class="group relative inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-3 rounded-full font-black text-lg shadow-lg shadow-red-200 hover:shadow-xl hover:bg-red-600 hover:-translate-y-1 transition-all duration-300 w-full md:w-auto"
+									type="button"
+								>
+									<span>Kirim Surat</span>
+									<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">send</span>
+								</button>
+							</div>
+						</form>
+					</div>
+					<div class="absolute bottom-0 w-full h-2 bg-primary/10"></div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer class="bg-white border-t border-gray-100 py-10 mt-auto">
+		<div class="layout-container max-w-[960px] mx-auto px-6">
+			<div class="flex flex-col md:flex-row items-center justify-between gap-6">
+				<div class="flex flex-col gap-2 text-center md:text-left">
+					<div class="flex items-center justify-center md:justify-start gap-2 text-gray-800 font-bold text-lg">
+						<span class="material-symbols-outlined text-primary">map</span>
+						<span>Lokasi Kami</span>
+					</div>
+					<p class="text-gray-500">Jalan Pendidikan No. 1, Klagen, Indonesia</p>
+				</div>
+				<div class="w-full md:w-64 h-24 rounded-2xl overflow-hidden border-4 border-white shadow-lg rotate-1 hover:rotate-0 transition-transform">
+					<img
+						class="w-full h-full object-cover"
+						data-alt="Map showing the location of the school in Klagen"
+						data-location="Klagen"
+						src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPyFiXNzy9qG9lAnWT56j_sWIO5WOTRTCragURivoKbgkrp5Y08R-Yb72mDmGWGWACuQELKHwEMw6e-IRHPAZ2G002ZViQbK10GHf-NbQTm2u9QpWhIF8P7x-QoE4LXxSXJJirwC6FHTJePgcOgM50PNH5gKOhONRdJQR8ZbYSR6RnVJMZKEVVK92xBAVpsdVolEvXK4SBVorsZjzjgFOrdOfKJ2_n4xsvmdKc-bjmUy-BqYuoYMZ4nhiYy1vBBDCDXXpmbbIXqYA"
+					/>
+					<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+				</div>
+			</div>
+			<div class="mt-8 pt-8 border-t border-gray-100 text-center">
+				<p class="text-gray-400 text-sm">© 2023 SDN Klagen 1. Dibuat dengan ❤️ untuk murid-murid hebat.</p>
+			</div>
+		</div>
+	</footer>
+</Layout>
