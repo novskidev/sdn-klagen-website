@@ -74,57 +74,183 @@ const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 			<section class="relative overflow-hidden bg-white px-4 py-12 md:py-20 lg:px-40">
 				<div class="absolute -left-10 top-20 h-32 w-32 rounded-full bg-yellow-200 opacity-50 blur-3xl"></div>
 				<div class="absolute right-0 bottom-0 h-64 w-64 rounded-full bg-primary/20 opacity-50 blur-3xl"></div>
-				<div class="relative mx-auto flex max-w-5xl flex-col items-center gap-10 md:flex-row md:justify-between">
-					<div class="flex flex-1 flex-col gap-6 text-center md:text-left">
-						<div class="inline-flex w-fit items-center gap-2 rounded-full bg-yellow-100 px-4 py-1.5 text-yellow-700 mx-auto md:mx-0">
+				<div class="relative mx-auto max-w-6xl">
+					<div class="mb-8 flex flex-col items-center gap-4 text-center md:items-start md:text-left">
+						<div class="inline-flex w-fit items-center gap-2 rounded-full bg-yellow-100 px-4 py-1.5 text-yellow-700">
 							<span class="material-symbols-outlined text-lg">emoji_events</span>
 							<span class="text-xs font-bold uppercase tracking-wide">Siswa Berprestasi Bulan Ini</span>
 						</div>
-						<h1 class="text-4xl font-black leading-tight tracking-tight text-[#111418] md:text-5xl lg:text-6xl">
-							Selamat kepada <span class="text-primary">Budi Santoso!</span>
+						<h1 class="text-3xl font-black leading-tight tracking-tight text-[#111418] md:text-4xl lg:text-5xl">
+							Panggung Prestasi Siswa SDN Klagën 1
 						</h1>
-						<p class="text-lg font-medium leading-relaxed text-gray-600 md:text-xl">
-							Bintang Kelas 4 kita telah menunjukkan kebaikan yang luar biasa kepada teman-teman dan
-							keunggulan dalam Pameran Sains. Teruslah bersinar, Budi!
+						<p class="max-w-2xl text-base font-medium leading-relaxed text-gray-600 md:text-lg">
+							Geser untuk melihat cerita siswa-siswi berprestasi yang menunjukkan kebaikan, kreativitas, dan
+							keunggulan di berbagai kegiatan sekolah.
 						</p>
-						<div class="flex flex-col gap-3 sm:flex-row justify-center md:justify-start">
-							<button
-								class="flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-8 text-base font-bold text-white shadow-lg transition-transform hover:scale-105"
-								type="button"
-							>
-								<span class="material-symbols-outlined">auto_stories</span>
-								Baca Cerita Budi
-							</button>
-							<button
-								class="flex h-12 items-center justify-center gap-2 rounded-full bg-white border-2 border-gray-200 px-8 text-base font-bold text-gray-700 hover:bg-gray-50 transition-colors"
-								type="button"
-							>
-								<span class="material-symbols-outlined">history_edu</span>
-								Lihat Pemenang Lalu
-							</button>
-						</div>
 					</div>
-					<div class="relative flex-shrink-0">
-						<div class="absolute -inset-4 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-500 opacity-30 blur-lg animate-pulse"></div>
+					<div class="relative">
 						<div
-							class="relative flex h-64 w-64 items-center justify-center rounded-full border-[8px] border-yellow-400 bg-white shadow-[0_0_40px_rgba(250,204,21,0.5)] ring-4 ring-yellow-200 ring-offset-4 ring-offset-yellow-100 md:h-80 md:w-80 overflow-hidden"
+							class="flex flex-nowrap overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6 pt-4 gap-6 md:gap-8 [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
 						>
-							<div
-								class="h-full w-full bg-cover bg-center"
-								data-alt="Budi Santoso smiling holding a book"
-								style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBP31zG3o8Zm5-v28Hg_L4VW20iVnupazff00LdLWGLdsBZ0rzIjLwuXl4EPU7XqvW_f4oLjuVy8FbaHUowAm5rmvKBojohWuTzDVshkDisZdPP9XyGhTpxehO-UIdL94vth2g1pdvUL79ZgbFITb8E_-65yqDCFKjAsfCoKeRrRLAfjKFGFRRNjkfhbEU3HIyCzTmUUDrGj8Xf58PcboSfPSMcarI3Ns8MDMaSFYCKxli9LyY6R284pyibsGCO52iO0h7UJ-kCzOg");'
-							></div>
-							<div
-								class="absolute -bottom-2 right-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-b from-yellow-300 to-yellow-500 text-white shadow-lg border-4 border-white"
+							<article
+								id="prestasi-budi"
+								class="snap-center flex-none w-[92%] md:w-[78%] bg-white shadow-xl rounded-3xl border border-yellow-100 overflow-hidden"
 							>
-								<span class="material-symbols-outlined text-4xl drop-shadow-sm">trophy</span>
-							</div>
+								<div class="grid gap-6 p-6 md:grid-cols-[1.1fr,0.9fr] md:items-center md:p-10">
+									<div class="flex flex-col gap-5">
+										<div class="inline-flex w-fit items-center gap-2 rounded-full bg-yellow-100 px-4 py-1.5 text-yellow-700">
+											<span class="material-symbols-outlined text-lg">emoji_events</span>
+											<span class="text-xs font-bold uppercase tracking-wide">Bintang Sains</span>
+										</div>
+										<h2 class="text-3xl font-black text-[#111418] md:text-4xl">
+											Selamat kepada <span class="text-primary">Budi Santoso!</span>
+										</h2>
+										<p class="text-base font-medium leading-relaxed text-gray-600 md:text-lg">
+											Bintang Kelas 4 kita telah menunjukkan kebaikan yang luar biasa kepada teman-teman dan
+											keunggulan dalam Pameran Sains. Teruslah bersinar, Budi!
+										</p>
+										<div class="flex flex-wrap gap-2">
+											<span class="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">Kebaikan</span>
+											<span class="rounded-full bg-green-50 px-3 py-1 text-xs font-bold text-green-700">Eksperimen</span>
+											<span class="rounded-full bg-yellow-50 px-3 py-1 text-xs font-bold text-yellow-700">Prestasi</span>
+										</div>
+										<div class="flex flex-wrap gap-3">
+											<button
+												class="flex h-11 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-bold text-white shadow-lg transition-transform hover:scale-105"
+												type="button"
+											>
+												<span class="material-symbols-outlined text-base">auto_stories</span>
+												Baca Cerita
+											</button>
+											<button
+												class="flex h-11 items-center justify-center gap-2 rounded-full bg-white border-2 border-gray-200 px-6 text-sm font-bold text-gray-700 hover:bg-gray-50 transition-colors"
+												type="button"
+											>
+												<span class="material-symbols-outlined text-base">history_edu</span>
+												Lihat Pemenang
+											</button>
+										</div>
+									</div>
+									<div class="relative flex justify-center">
+										<div class="absolute -inset-4 rounded-full bg-gradient-to-br from-yellow-300 to-yellow-500 opacity-30 blur-lg"></div>
+										<div
+											class="relative flex h-64 w-64 items-center justify-center rounded-full border-[8px] border-yellow-400 bg-white shadow-[0_0_40px_rgba(250,204,21,0.5)] ring-4 ring-yellow-200 ring-offset-4 ring-offset-yellow-100 overflow-hidden"
+										>
+											<div
+												class="h-full w-full bg-cover bg-center"
+												data-alt="Budi Santoso smiling holding a book"
+												style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBP31zG3o8Zm5-v28Hg_L4VW20iVnupazff00LdLWGLdsBZ0rzIjLwuXl4EPU7XqvW_f4oLjuVy8FbaHUowAm5rmvKBojohWuTzDVshkDisZdPP9XyGhTpxehO-UIdL94vth2g1pdvUL79ZgbFITb8E_-65yqDCFKjAsfCoKeRrRLAfjKFGFRRNjkfhbEU3HIyCzTmUUDrGj8Xf58PcboSfPSMcarI3Ns8MDMaSFYCKxli9LyY6R284pyibsGCO52iO0h7UJ-kCzOg");'
+											></div>
+											<div
+												class="absolute -bottom-2 right-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-b from-yellow-300 to-yellow-500 text-white shadow-lg border-4 border-white"
+											>
+												<span class="material-symbols-outlined text-4xl drop-shadow-sm">trophy</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<article
+								id="prestasi-laras"
+								class="snap-center flex-none w-[92%] md:w-[78%] bg-white shadow-xl rounded-3xl border border-pink-100 overflow-hidden"
+							>
+								<div class="grid gap-6 p-6 md:grid-cols-[1.1fr,0.9fr] md:items-center md:p-10">
+									<div class="flex flex-col gap-5">
+										<div class="inline-flex w-fit items-center gap-2 rounded-full bg-pink-100 px-4 py-1.5 text-pink-700">
+											<span class="material-symbols-outlined text-lg">palette</span>
+											<span class="text-xs font-bold uppercase tracking-wide">Juara Kreativitas</span>
+										</div>
+										<h2 class="text-3xl font-black text-[#111418] md:text-4xl">
+											Laras Wulan, <span class="text-pink-500">Sang Ilustrator Kecil</span>
+										</h2>
+										<p class="text-base font-medium leading-relaxed text-gray-600 md:text-lg">
+											Lukisannya menghidupkan tema persahabatan kelas dan menjadi favorit guru. Warna-warna cerahnya
+											menginspirasi teman-teman untuk berkarya bersama.
+										</p>
+										<div class="flex flex-wrap gap-2">
+											<span class="rounded-full bg-pink-50 px-3 py-1 text-xs font-bold text-pink-700">Kreatif</span>
+											<span class="rounded-full bg-purple-50 px-3 py-1 text-xs font-bold text-purple-700">Seni Rupa</span>
+											<span class="rounded-full bg-orange-50 px-3 py-1 text-xs font-bold text-orange-700">Kolaborasi</span>
+										</div>
+									</div>
+									<div class="relative flex justify-center">
+										<div class="absolute -inset-4 rounded-full bg-gradient-to-br from-pink-300 to-fuchsia-500 opacity-30 blur-lg"></div>
+										<div
+											class="relative flex h-64 w-64 items-center justify-center rounded-full border-[8px] border-pink-300 bg-white shadow-[0_0_40px_rgba(236,72,153,0.35)] ring-4 ring-pink-200 ring-offset-4 ring-offset-pink-100 overflow-hidden"
+										>
+											<div
+												class="h-full w-full bg-cover bg-center"
+												data-alt="Student holding a colorful painting"
+												style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWsqjZkFQD4CM_1MJWj6CrCMnD6T3_CI14CyZxli3WPeK8uwWWFy49CH9-yaJcdr-2JbiSE7ZVWeQPYfAd8JIYT3auWQT6-a2oM3ocOglCz2EYLKL8pvQPbKzM4yk2Qt-LrpyjubHS27Ob70p8jukY12KUsxEJMvob9RFrK3mVkYPhRD3WnsJvCqyDYDtzR691S8UIbiXO6yjkEYxtR_xsO4fZVoqX0pDUb3deU22M0fxrLNXI4T_RphLpCafI8Bg-kxOVcWrP9YQ");'
+											></div>
+											<div
+												class="absolute -bottom-2 left-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-b from-pink-300 to-fuchsia-500 text-white shadow-lg border-4 border-white"
+											>
+												<span class="material-symbols-outlined text-4xl drop-shadow-sm">brush</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
+							<article
+								id="prestasi-raka"
+								class="snap-center flex-none w-[92%] md:w-[78%] bg-white shadow-xl rounded-3xl border border-blue-100 overflow-hidden"
+							>
+								<div class="grid gap-6 p-6 md:grid-cols-[1.1fr,0.9fr] md:items-center md:p-10">
+									<div class="flex flex-col gap-5">
+										<div class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-100 px-4 py-1.5 text-blue-700">
+											<span class="material-symbols-outlined text-lg">rocket_launch</span>
+											<span class="text-xs font-bold uppercase tracking-wide">Aksi Ekstra</span>
+										</div>
+										<h2 class="text-3xl font-black text-[#111418] md:text-4xl">
+											Raka Pradipta, <span class="text-blue-500">Pemimpin Tim Robotik</span>
+										</h2>
+										<p class="text-base font-medium leading-relaxed text-gray-600 md:text-lg">
+											Dengan semangat kolaborasi, Raka memimpin tim ekstra klub robotik dan membawa pulang juara
+											dalam tantangan inovasi sekolah.
+										</p>
+										<div class="flex flex-wrap gap-2">
+											<span class="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">Teknologi</span>
+											<span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700">Tim Ekstra</span>
+											<span class="rounded-full bg-indigo-50 px-3 py-1 text-xs font-bold text-indigo-700">Inovasi</span>
+										</div>
+									</div>
+									<div class="relative flex justify-center">
+										<div class="absolute -inset-4 rounded-full bg-gradient-to-br from-blue-300 to-cyan-500 opacity-30 blur-lg"></div>
+										<div
+											class="relative flex h-64 w-64 items-center justify-center rounded-full border-[8px] border-blue-300 bg-white shadow-[0_0_40px_rgba(59,130,246,0.35)] ring-4 ring-blue-200 ring-offset-4 ring-offset-blue-100 overflow-hidden"
+										>
+											<div
+												class="h-full w-full bg-cover bg-center"
+												data-alt="Student showcasing a robotics project"
+												style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAjR6lKIQAg1cark0HtFD8B97zNJT_23G_1dJQ54XkBtdcnNkL17SGv1TRc15fRGVO4T30KXNFEzz2EwdJu4I4h7jQDpMnB7favFE2VflMUuRzjzR9_rNcFSlKfDBU9gJQVTvyIzFyzgU7kXS8l7jWLBKQy3feqSayBAOxy89P84kY84vIAVj_hW6-NM8RMuNaDfN1xo41mMirmQWpRvk7_KAMDMLkb1Im1-kbIgPmmIutF_J1jyKpWtZHfxh6sAFSAfgPRrGd4xU");'
+											></div>
+											<div
+												class="absolute -bottom-2 right-6 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-b from-blue-300 to-cyan-500 text-white shadow-lg border-4 border-white"
+											>
+												<span class="material-symbols-outlined text-4xl drop-shadow-sm">rocket_launch</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</article>
 						</div>
-						<div class="absolute top-0 right-10 text-yellow-400 animate-bounce" style="animation-duration: 2s;">
-							<span class="material-symbols-outlined text-4xl">spark</span>
-						</div>
-						<div class="absolute bottom-10 -left-6 text-yellow-400 animate-bounce" style="animation-duration: 3s;">
-							<span class="material-symbols-outlined text-3xl">star</span>
+						<div class="mt-4 flex items-center justify-center gap-3">
+							<a
+								class="h-3 w-3 rounded-full bg-yellow-400 shadow-sm ring-2 ring-yellow-200 hover:scale-110 transition-transform"
+								href="#prestasi-budi"
+								aria-label="Lihat slide Budi Santoso"
+							></a>
+							<a
+								class="h-3 w-3 rounded-full bg-pink-400 shadow-sm ring-2 ring-pink-200 hover:scale-110 transition-transform"
+								href="#prestasi-laras"
+								aria-label="Lihat slide Laras Wulan"
+							></a>
+							<a
+								class="h-3 w-3 rounded-full bg-blue-400 shadow-sm ring-2 ring-blue-200 hover:scale-110 transition-transform"
+								href="#prestasi-raka"
+								aria-label="Lihat slide Raka Pradipta"
+							></a>
 						</div>
 					</div>
 				</div>
@@ -149,21 +275,28 @@ const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 								type="button"
 							>
 								<span class="material-symbols-outlined">sports_soccer</span>
-								<span class="font-bold">Olahraga</span>
+								<span class="font-bold">Ekstra</span>
 							</button>
 							<button
 								class="group flex items-center gap-2 rounded-full bg-[#fcc419] px-6 py-3 text-white shadow-md hover:bg-[#fab005] transition-all hover:-translate-y-1 hover:-rotate-2"
 								type="button"
 							>
 								<span class="material-symbols-outlined">palette</span>
-								<span class="font-bold">Seni</span>
+								<span class="font-bold">Activities</span>
 							</button>
 							<button
 								class="group flex items-center gap-2 rounded-full bg-[#51cf66] px-6 py-3 text-white shadow-md hover:bg-[#40c057] transition-all hover:-translate-y-1 hover:rotate-1"
 								type="button"
 							>
 								<span class="material-symbols-outlined">science</span>
-								<span class="font-bold">Sains</span>
+								<span class="font-bold">Pembelajaran</span>
+							</button>
+							<button
+								class="group flex items-center gap-2 rounded-full bg-[#4dabf7] px-6 py-3 text-white shadow-md hover:bg-[#339af0] transition-all hover:-translate-y-1 hover:-rotate-1"
+								type="button"
+							>
+								<span class="material-symbols-outlined">campaign</span>
+								<span class="font-bold">Pengumuman</span>
 							</button>
 						</div>
 					</div>
