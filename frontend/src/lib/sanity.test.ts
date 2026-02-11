@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildSanityConfig } from "./sanity";
+import { buildSanityConfig, getImageUrl } from "./sanity";
 
 const envOk = {
   SANITY_PROJECT_ID: "demo",
@@ -17,5 +17,25 @@ describe("buildSanityConfig", () => {
 
   it("throws when required env missing", () => {
     expect(() => buildSanityConfig({})).toThrow("Missing Sanity env");
+  });
+});
+
+describe("getImageUrl", () => {
+  it("returns undefined when image is missing", () => {
+    expect(getImageUrl(null, envOk)).toBeUndefined();
+  });
+
+  it("builds a sanity image url", () => {
+    const url = getImageUrl(
+      {
+        asset: {
+          _ref: "image-abc123-800x600-png",
+        },
+      },
+      envOk,
+    );
+
+    expect(url).toContain("https://cdn.sanity.io/images/demo/production/");
+    expect(url).toContain("abc123-800x600.png");
   });
 });

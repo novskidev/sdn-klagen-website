@@ -26,3 +26,25 @@ export function buildSanityConfig(env: SanityEnv) {
 export function getSanityClient() {
   return createClient(buildSanityConfig(import.meta.env));
 }
+
+type SanityImageSource = {
+  asset?: {
+    _ref?: string;
+  };
+};
+
+export function getImageUrl(source: SanityImageSource | null | undefined, env: SanityEnv = import.meta.env) {
+  if (!source?.asset?._ref) {
+    return undefined;
+  }
+
+  const config = buildSanityConfig(env);
+  const match = source.asset._ref.match(/^image-([a-zA-Z0-9]+)-(\d+)x(\d+)-(\w+)$/);
+
+  if (!match) {
+    return undefined;
+  }
+
+  const [, id, width, height, format] = match;
+  return `https://cdn.sanity.io/images/${config.projectId}/${config.dataset}/${id}-${width}x${height}.${format}`;
+}
