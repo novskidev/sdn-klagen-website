@@ -11,15 +11,15 @@ export const homepage = defineType({
     defineField({
       name: "heroCtaPrimaryUrl",
       title: "CTA Primary URL",
-      type: "url",
-      options: { allowRelative: true },
+      type: "string",
+      validation: (Rule) => Rule.uri({ allowRelative: true }),
     }),
     defineField({ name: "heroCtaSecondaryLabel", title: "CTA Secondary Label", type: "string" }),
     defineField({
       name: "heroCtaSecondaryUrl",
       title: "CTA Secondary URL",
-      type: "url",
-      options: { allowRelative: true },
+      type: "string",
+      validation: (Rule) => Rule.uri({ allowRelative: true }),
     }),
     defineField({
       name: "heroImage",
@@ -40,8 +40,8 @@ export const homepage = defineType({
     defineField({
       name: "announcementCtaUrl",
       title: "Announcement CTA URL",
-      type: "url",
-      options: { allowRelative: true },
+      type: "string",
+      validation: (Rule) => Rule.uri({ allowRelative: true }),
     }),
     defineField({
       name: "announcementEnabled",
