@@ -21,6 +21,8 @@
 **Step 2: Record approval**
 - Add a short note to this plan confirming approval.
 
+**Approval note (2026-02-11):** User approved TDD exceptions for Sanity schema files and Astro template wiring. Tests remain required for helper logic.
+
 **Step 3: Commit**
 ```bash
 git add docs/plans/2026-02-11-about-page-implementation.md
@@ -327,4 +329,3 @@ git commit -m "feat(sanity): add about page schema"
 
 **Step 2: Publish and verify**
 - Publish then check `/tentang-kami`.
-
