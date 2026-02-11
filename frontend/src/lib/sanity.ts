@@ -19,7 +19,7 @@ export function buildSanityConfig(env: SanityEnv) {
     projectId,
     dataset,
     apiVersion,
-    useCdn: true,
+    useCdn: !import.meta.env.DEV,
   };
 }
 
