@@ -8,9 +8,19 @@ export const homepage = defineType({
     defineField({ name: "heroTitle", title: "Hero Title", type: "string" }),
     defineField({ name: "heroSubtitle", title: "Hero Subtitle", type: "text" }),
     defineField({ name: "heroCtaPrimaryLabel", title: "CTA Primary Label", type: "string" }),
-    defineField({ name: "heroCtaPrimaryUrl", title: "CTA Primary URL", type: "url" }),
+    defineField({
+      name: "heroCtaPrimaryUrl",
+      title: "CTA Primary URL",
+      type: "url",
+      options: { allowRelative: true },
+    }),
     defineField({ name: "heroCtaSecondaryLabel", title: "CTA Secondary Label", type: "string" }),
-    defineField({ name: "heroCtaSecondaryUrl", title: "CTA Secondary URL", type: "url" }),
+    defineField({
+      name: "heroCtaSecondaryUrl",
+      title: "CTA Secondary URL",
+      type: "url",
+      options: { allowRelative: true },
+    }),
     defineField({
       name: "heroImage",
       title: "Hero Image",
@@ -27,7 +37,12 @@ export const homepage = defineType({
     defineField({ name: "announcementTitle", title: "Announcement Title", type: "string" }),
     defineField({ name: "announcementText", title: "Announcement Text", type: "text" }),
     defineField({ name: "announcementCtaLabel", title: "Announcement CTA Label", type: "string" }),
-    defineField({ name: "announcementCtaUrl", title: "Announcement CTA URL", type: "url" }),
+    defineField({
+      name: "announcementCtaUrl",
+      title: "Announcement CTA URL",
+      type: "url",
+      options: { allowRelative: true },
+    }),
     defineField({
       name: "announcementEnabled",
       title: "Announcement Enabled",
