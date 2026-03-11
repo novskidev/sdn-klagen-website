@@ -2,12 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 import { getImageUrl, getSanityClient } from '../lib/sanity';
 import { fetchHomepage } from '../lib/homepage';
+import { fetchGalleryPage } from '../lib/gallery-page';
 
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const homepage = await fetchHomepage(getSanityClient());
+const galleryPage = await fetchGalleryPage(getSanityClient());
 const heroImageUrl =
 	getImageUrl(homepage.heroImage) ??
 	"https://lh3.googleusercontent.com/aida-public/AB6AXuAygnaL6BjmZeomSt7X4YWkuq3_rCU11L8s37Nx-7xhNi0Hlm7PzOg2XjZWyA3PFURrH39uFsK0VAJxtGFVwO68Mprvrvp51s8AxQVsl5n1Ah8d3M5_jAoK6_llq0mdNtp6UisIR1NNM18glfNnGO4jIB4EEwkv67FFm73pnTrd9_VQe6At0PAiP7LJSVaHElZw1OwI_SJ6cvIlyr6bbUpEGvbGXtjf0W6h8DGvd-YSZbQRf9FrVwymwGHDh5PlwmcjDllr6ZN15Eg";
+
+const galleryFallbackImages = [
+	'https://lh3.googleusercontent.com/aida-public/AB6AXuDWsqjZkFQD4CM_1MJWj6CrCMnD6T3_CI14CyZxli3WPeK8uwWWFy49CH9-yaJcdr-2JbiSE7ZVWeQPYfAd8JIYT3auWQT6-a2oM3ocOglCz2EYLKL8pvQPbKzM4yk2Qt-LrpyjubHS27Ob70p8jukY12KUsxEJMvob9RFrK3mVkYPhRD3WnsJvCqyDYDtzR691S8UIbiXO6yjkEYxtR_xsO4fZVoqX0pDUb3deU22M0fxrLNXI4T_RphLpCafI8Bg-kxOVcWrP9YQ',
+	'https://lh3.googleusercontent.com/aida-public/AB6AXuDAjR6lKIQAg1cark0HtFD8B97zNJT_23G_1dJQ54XkBtdcnNkL17SGv1TRc15fRGVO4T30KXNFEzz2EwdJu4I4h7jQDpMnB7favFE2VflMUuRzjzR9_rNcFSlKfDBU9gJQVTvyIzFyzgU7kXS8l7jWLBKQy3feqSayBAOxy89P84kY84vIAVj_hW6-NM8RMuNaDfN1xo41mMirmQWpRvk7_KAMDMLkb1Im1-kbIgPmmIutF_J1jyKpWtZHfxh6sAFSAfgPRrGd4xU',
+	'https://lh3.googleusercontent.com/aida-public/AB6AXuBz8jc8D84V-ce0mCQYkYbPmvpERno3tlg7UQJ1hkBayDVYg0XlAlhBpeYeMcL0prHWRfTecfRAvKg4tV8Nmen0w_ujz8owGproDHgU7PtEbE0ye1PJtgeLECzVcPvyrWpn14ua0DOBmi9aH4u9L3wZnXLQSBn5_3XDp3PVhLh_pt47gB3jv_i21TsI72coWggydiPNMA8CDs6BuEUQIkD6H-jTAMyDPe4N_mYYdMrrjw5o9549S2K6hcdXlwtEcjCeHhwWB-w9-jk',
+	'https://lh3.googleusercontent.com/aida-public/AB6AXuCHrnFCiH-b5tFZt431SKvJD1_g6LyfOsV4-FCKugBR-zUg1zPp1URREkF8XW2dCA59kVa0Tue12OdzkUmaX5svuzkcW53RYh3ZYdTcpmOOXSKcVzR4txRx2VhyVHzGQvr0AH7EusS3JGN2yohhrNUQScPgM2jeYbq1RZDwWw0SVGslR6OT8vIzEilQUdyS4Hxmo6t6UqrcWEbZ0kinwcPV4UjmtFRxA_TeYkKDcmtRK17UTNR2yXl86d81AOUnLkok2br79nqCOHc',
+];
+const polaroidTiltClasses = ['polaroid-tilt-1', 'polaroid-tilt-2', 'polaroid-tilt-3', 'polaroid-tilt-4'];
 ---
 
 <Layout>
@@ -227,7 +237,7 @@ const heroImageUrl =
 							class="text-3xl md:text-4xl font-black text-[#2d3436] dark:text-white drop-shadow-sm flex items-center gap-3"
 						>
 							<span class="material-symbols-outlined text-accent-red">photo_camera</span>
-							Momen Ceria Kami
+							{galleryPage.activitiesTitle}
 						</h2>
 						<a
 							class="hidden sm:inline-block text-primary font-bold hover:underline decoration-2 underline-offset-4"
@@ -239,66 +249,31 @@ const heroImageUrl =
 					<div
 						class="flex flex-nowrap overflow-x-auto pb-12 pt-4 px-4 gap-6 md:gap-8 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden"
 					>
-						<div
-							class="flex-none w-64 md:w-72 bg-white p-3 pb-8 shadow-xl rounded-sm transform polaroid-tilt-1 hover:scale-105 hover:z-20 hover:rotate-0 transition-all duration-300 cursor-pointer"
-						>
-							<div
-								class="w-full aspect-square bg-gray-100 mb-3 overflow-hidden shadow-inner"
-								data-alt="Kids painting in art class with colorful aprons"
-								style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWsqjZkFQD4CM_1MJWj6CrCMnD6T3_CI14CyZxli3WPeK8uwWWFy49CH9-yaJcdr-2JbiSE7ZVWeQPYfAd8JIYT3auWQT6-a2oM3ocOglCz2EYLKL8pvQPbKzM4yk2Qt-LrpyjubHS27Ob70p8jukY12KUsxEJMvob9RFrK3mVkYPhRD3WnsJvCqyDYDtzR691S8UIbiXO6yjkEYxtR_xsO4fZVoqX0pDUb3deU22M0fxrLNXI4T_RphLpCafI8Bg-kxOVcWrP9YQ'); background-size: cover; background-position: center;"
-							></div>
-							<p
-								class="text-center font-display font-bold text-gray-700 text-lg transform rotate-[-1deg]"
-								style="font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;"
-							>
-								Kelas Seni Seru! 🎨
-							</p>
-						</div>
-						<div
-							class="flex-none w-64 md:w-72 bg-white p-3 pb-8 shadow-xl rounded-sm transform polaroid-tilt-2 hover:scale-105 hover:z-20 hover:rotate-0 transition-all duration-300 cursor-pointer"
-						>
-							<div
-								class="w-full aspect-square bg-gray-100 mb-3 overflow-hidden shadow-inner"
-								data-alt="Students presenting a volcano project at the science fair"
-								style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAjR6lKIQAg1cark0HtFD8B97zNJT_23G_1dJQ54XkBtdcnNkL17SGv1TRc15fRGVO4T30KXNFEzz2EwdJu4I4h7jQDpMnB7favFE2VflMUuRzjzR9_rNcFSlKfDBU9gJQVTvyIzFyzgU7kXS8l7jWLBKQy3feqSayBAOxy89P84kY84vIAVj_hW6-NM8RMuNaDfN1xo41mMirmQWpRvk7_KAMDMLkb1Im1-kbIgPmmIutF_J1jyKpWtZHfxh6sAFSAfgPRrGd4xU'); background-size: cover; background-position: center;"
-							></div>
-							<p
-								class="text-center font-display font-bold text-gray-700 text-lg transform rotate-[1deg]"
-								style="font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;"
-							>
-								Pameran Sains 🧪
-							</p>
-						</div>
-						<div
-							class="flex-none w-64 md:w-72 bg-white p-3 pb-8 shadow-xl rounded-sm transform polaroid-tilt-3 hover:scale-105 hover:z-20 hover:rotate-0 transition-all duration-300 cursor-pointer"
-						>
-							<div
-								class="w-full aspect-square bg-gray-100 mb-3 overflow-hidden shadow-inner"
-								data-alt="Children playing on the playground slide during recess"
-								style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBz8jc8D84V-ce0mCQYkYbPmvpERno3tlg7UQJ1hkBayDVYg0XlAlhBpeYeMcL0prHWRfTecfRAvKg4tV8Nmen0w_ujz8owGproDHgU7PtEbE0ye1PJtgeLECzVcPvyrWpn14ua0DOBmi9aH4u9L3wZnXLQSBn5_3XDp3PVhLh_pt47gB3jv_i21TsI72coWggydiPNMA8CDs6BuEUQIkD6H-jTAMyDPe4N_mYYdMrrjw5o9549S2K6hcdXlwtEcjCeHhwWB-w9-jk'); background-size: cover; background-position: center;"
-							></div>
-							<p
-								class="text-center font-display font-bold text-gray-700 text-lg"
-								style="font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;"
-							>
-								Istirahat Terbaik ☀️
-							</p>
-						</div>
-						<div
-							class="flex-none w-64 md:w-72 bg-white p-3 pb-8 shadow-xl rounded-sm transform polaroid-tilt-4 hover:scale-105 hover:z-20 hover:rotate-0 transition-all duration-300 cursor-pointer"
-						>
-							<div
-								class="w-full aspect-square bg-gray-100 mb-3 overflow-hidden shadow-inner"
-								data-alt="Teacher reading a book to a group of engaged students"
-								style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCHrnFCiH-b5tFZt431SKvJD1_g6LyfOsV4-FCKugBR-zUg1zPp1URREkF8XW2dCA59kVa0Tue12OdzkUmaX5svuzkcW53RYh3ZYdTcpmOOXSKcVzR4txRx2VhyVHzGQvr0AH7EusS3JGN2yohhrNUQScPgM2jeYbq1RZDwWw0SVGslR6OT8vIzEilQUdyS4Hxmo6t6UqrcWEbZ0kinwcPV4UjmtFRxA_TeYkKDcmtRK17UTNR2yXl86d81AOUnLkok2br79nqCOHc'); background-size: cover; background-position: center;"
-							></div>
-							<p
-								class="text-center font-display font-bold text-gray-700 text-lg transform rotate-[2deg]"
-								style="font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;"
-							>
-								Waktunya Membaca 📚
-							</p>
-						</div>
+						{galleryPage.galleryItems.map((item, index) => {
+							const tiltClass = polaroidTiltClasses[index % polaroidTiltClasses.length];
+							const fallbackImage = galleryFallbackImages[index % galleryFallbackImages.length];
+							const imageUrl = getImageUrl(item.image) ?? fallbackImage;
+							return (
+								<div
+									class:list={[
+										'flex-none w-64 md:w-72 bg-white p-3 pb-8 shadow-xl rounded-sm transform hover:scale-105 hover:z-20 hover:rotate-0 transition-all duration-300 cursor-pointer',
+										tiltClass,
+									]}
+								>
+									<div
+										class="w-full aspect-square bg-gray-100 mb-3 overflow-hidden shadow-inner"
+										data-alt={item.imageAlt}
+										style={`background-image: url("${imageUrl}"); background-size: cover; background-position: center;`}
+									></div>
+									<p
+										class="text-center font-display font-bold text-gray-700 text-lg"
+										style="font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;"
+									>
+										{item.title}
+									</p>
+								</div>
+							);
+						})}
 					</div>
 				</div>
 			</div>

@@ -1,5 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { fetchContactPage } from '../lib/contact-page';
+import { getImageUrl, getSanityClient } from '../lib/sanity';
+
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const contactPage = await fetchContactPage(getSanityClient());
+const mascotFallbackImage =
+	'https://lh3.googleusercontent.com/aida-public/AB6AXuDkAxEZISpV1x676Io5ME_ZF7yMulMRM--gq8WAsA6COaj0F34UJAzZr_Qj-k8ALm2RIjCF1gXHvrhNpB3I7ml-N_iAd4KNQDiecPIYpniyepmzo0swbGW-RlUq1Uu2hGIfo3QhiE1_I3xPxbouI3bFLOASVm63-ZwjaK_7ynQU0Azh5b7Bzq6QbFcvPMN63GjxO9Q-oAiRehO_QozQHSyQJ3cBaWuNPUP_mR0rNMiHNm-Eqrwxj-KfQP0XFsBiVZzLpOmo5t_2Hvs';
+const mapFallbackImage =
+	'https://lh3.googleusercontent.com/aida-public/AB6AXuDPyFiXNzy9qG9lAnWT56j_sWIO5WOTRTCragURivoKbgkrp5Y08R-Yb72mDmGWGWACuQELKHwEMw6e-IRHPAZ2G002ZViQbK10GHf-NbQTm2u9QpWhIF8P7x-QoE4LXxSXJJirwC6FHTJePgcOgM50PNH5gKOhONRdJQR8ZbYSR6RnVJMZKEVVK92xBAVpsdVolEvXK4SBVorsZjzjgFOrdOfKJ2_n4xsvmdKc-bjmUy-BqYuoYMZ4nhiYy1vBBDCDXXpmbbIXqYA';
 ---
 
 <Layout
@@ -9,37 +18,53 @@ import Layout from '../layouts/Layout.astro';
 	<header class="w-full bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b-4 border-primary/20">
 		<div class="max-w-[1280px] mx-auto px-6 py-4">
 			<div class="flex items-center justify-between">
-				<div class="flex items-center gap-3">
-					<div class="bg-primary text-white p-2 rounded-xl">
-						<span class="material-symbols-outlined text-3xl">school</span>
+					<div class="flex items-center gap-3">
+						<div class="bg-primary text-white p-2 rounded-xl">
+							<span class="material-symbols-outlined text-3xl">school</span>
+						</div>
+						<div>
+							<h1 class="text-xl md:text-2xl font-black text-gray-800 tracking-tight">{contactPage.schoolName}</h1>
+							<p class="text-xs text-gray-500 font-medium tracking-wide uppercase">{contactPage.schoolTagline}</p>
+						</div>
 					</div>
-					<div>
-						<h1 class="text-xl md:text-2xl font-black text-gray-800 tracking-tight">SDN Klagen 1</h1>
-						<p class="text-xs text-gray-500 font-medium tracking-wide uppercase">Sekolah Dasar Ceria</p>
-					</div>
-				</div>
 				<nav class="hidden md:flex items-center gap-4">
 					<a
-						class="px-5 py-2.5 rounded-full bg-blue-100 text-primary font-bold hover:bg-primary hover:text-white transition-all transform hover:scale-105 shadow-sm border border-transparent hover:border-blue-200"
+						class:list={[
+							"px-5 py-2.5 rounded-full bg-blue-100 text-primary font-bold hover:bg-primary hover:text-white transition-all transform hover:scale-105 shadow-sm border border-transparent hover:border-blue-200",
+							{ "ring-4 ring-blue-100": pathname === "/" }
+						]}
 						href="/"
+						aria-current={pathname === "/" ? "page" : undefined}
 					>
 						Beranda
 					</a>
 					<a
-						class="px-5 py-2.5 rounded-full bg-yellow-100 text-yellow-700 font-bold hover:bg-secondary hover:text-white transition-all transform hover:scale-105 shadow-sm border border-transparent hover:border-yellow-200"
+						class:list={[
+							"px-5 py-2.5 rounded-full bg-yellow-100 text-yellow-700 font-bold hover:bg-secondary hover:text-white transition-all transform hover:scale-105 shadow-sm border border-transparent hover:border-yellow-200",
+							{ "ring-4 ring-yellow-100": pathname === "/tentang-kami" }
+						]}
 						href="/tentang-kami"
+						aria-current={pathname === "/tentang-kami" ? "page" : undefined}
 					>
 						Tentang Kami
 					</a>
 					<a
-						class="px-5 py-2.5 rounded-full bg-green-100 text-green-700 font-bold hover:bg-highlight hover:text-white transition-all transform hover:scale-105 shadow-sm border border-transparent hover:border-green-200"
+						class:list={[
+							"px-5 py-2.5 rounded-full bg-green-100 text-green-700 font-bold hover:bg-highlight hover:text-white transition-all transform hover:scale-105 shadow-sm border border-transparent hover:border-green-200",
+							{ "ring-4 ring-green-100": pathname === "/galeri" }
+						]}
 						href="/galeri"
+						aria-current={pathname === "/galeri" ? "page" : undefined}
 					>
 						Galeri
 					</a>
 					<a
-						class="px-5 py-2.5 rounded-full bg-accent text-white font-bold shadow-md ring-4 ring-red-100 transform scale-105"
+						class:list={[
+							"px-5 py-2.5 rounded-full bg-accent text-white font-bold shadow-md transform scale-105",
+							{ "ring-4 ring-red-100": pathname === "/kontak" }
+						]}
 						href="/kontak"
+						aria-current={pathname === "/kontak" ? "page" : undefined}
 					>
 						Kontak
 					</a>
@@ -72,25 +97,20 @@ import Layout from '../layouts/Layout.astro';
 				<div class="relative w-64 h-64 md:w-80 md:h-80 animate-float">
 					<img
 						class="w-full h-full object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-300"
-						data-alt="Illustration of a cute owl postman flying with a letter"
-						src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkAxEZISpV1x676Io5ME_ZF7yMulMRM--gq8WAsA6COaj0F34UJAzZr_Qj-k8ALm2RIjCF1gXHvrhNpB3I7ml-N_iAd4KNQDiecPIYpniyepmzo0swbGW-RlUq1Uu2hGIfo3QhiE1_I3xPxbouI3bFLOASVm63-ZwjaK_7ynQU0Azh5b7Bzq6QbFcvPMN63GjxO9Q-oAiRehO_QozQHSyQJ3cBaWuNPUP_mR0rNMiHNm-Eqrwxj-KfQP0XFsBiVZzLpOmo5t_2Hvs"
+						alt={contactPage.mascotImageAlt}
+						src={getImageUrl(contactPage.mascotImage) ?? mascotFallbackImage}
 					/>
 					<div
 						class="absolute -top-6 -right-6 bg-white p-4 rounded-tr-3xl rounded-tl-3xl rounded-br-3xl shadow-xl border-2 border-primary/20 max-w-[180px]"
 					>
-						<p class="text-sm font-bold text-gray-700 leading-tight">
-							"Pak Pos Burung Hantu siap antar suratmu!"
-						</p>
+						<p class="text-sm font-bold text-gray-700 leading-tight">{contactPage.mascotQuote}</p>
 					</div>
 				</div>
 				<div class="space-y-4 max-w-md">
 					<h2 class="text-4xl md:text-5xl font-black text-gray-800 leading-tight tracking-tight">
-						Kirim Surat ke <span class="text-primary">Sekolah!</span>
+						{contactPage.heroTitle} <span class="text-primary">{contactPage.heroTitleHighlight}</span>
 					</h2>
-					<p class="text-lg text-gray-600 font-medium">
-						Punya pertanyaan atau cerita seru? Tulis di kertas ajaib di samping ini, Pak Pos akan segera
-						mengantarkannya!
-					</p>
+					<p class="text-lg text-gray-600 font-medium">{contactPage.heroSubtitle}</p>
 					<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4 w-full">
 						<div
 							class="bg-yellow-50 border-2 border-yellow-200 p-3 rounded-2xl flex items-center gap-3 shadow-sm transform rotate-[-2deg] hover:rotate-0 transition-transform"
@@ -99,8 +119,8 @@ import Layout from '../layouts/Layout.astro';
 								<span class="material-symbols-outlined text-xl">call</span>
 							</div>
 							<div class="text-left">
-								<p class="text-xs text-yellow-800 font-bold uppercase">Telepon</p>
-								<p class="text-sm text-gray-800 font-bold">(021) 123-4567</p>
+								<p class="text-xs text-yellow-800 font-bold uppercase">{contactPage.phoneLabel}</p>
+								<p class="text-sm text-gray-800 font-bold">{contactPage.phoneNumber}</p>
 							</div>
 						</div>
 						<div
@@ -110,8 +130,8 @@ import Layout from '../layouts/Layout.astro';
 								<span class="material-symbols-outlined text-xl">schedule</span>
 							</div>
 							<div class="text-left">
-								<p class="text-xs text-blue-800 font-bold uppercase">Buka</p>
-								<p class="text-sm text-gray-800 font-bold">07.00 - 13.00</p>
+								<p class="text-xs text-blue-800 font-bold uppercase">{contactPage.openingHoursLabel}</p>
+								<p class="text-sm text-gray-800 font-bold">{contactPage.openingHours}</p>
 							</div>
 						</div>
 					</div>
@@ -125,66 +145,87 @@ import Layout from '../layouts/Layout.astro';
 					<div class="p-8 md:p-10">
 						<div class="flex justify-between items-start mb-8">
 							<div>
-								<h3 class="text-2xl font-black text-gray-800 mb-1">Halo Pak Guru!</h3>
-								<p class="text-gray-500 font-medium text-sm">Isi formulir ini ya...</p>
+								<h3 class="text-2xl font-black text-gray-800 mb-1">{contactPage.formTitle}</h3>
+								<p class="text-gray-500 font-medium text-sm">{contactPage.formSubtitle}</p>
 							</div>
 							<div
 								class="stamp-edge w-20 h-24 flex flex-col items-center justify-center text-white rotate-6 shadow-lg transform hover:scale-110 transition-transform cursor-pointer"
 							>
 								<span class="material-symbols-outlined text-4xl mb-1">local_post_office</span>
-								<span class="text-[10px] font-bold uppercase tracking-wider">Klagen 1</span>
+								<span class="text-[10px] font-bold uppercase tracking-wider">{contactPage.schoolName}</span>
 							</div>
 						</div>
-						<form class="flex flex-col gap-6">
+						<form class="flex flex-col gap-6" id="contact-form" novalidate>
+							<input name="website" type="text" tabindex="-1" autocomplete="off" class="hidden" />
 							<div class="relative group">
-								<label class="block text-primary font-bold mb-1 text-sm uppercase tracking-wide">
-									Siapa Namamu?
+								<label class="block text-primary font-bold mb-1 text-sm uppercase tracking-wide" for="contact-name">
+									{contactPage.nameLabel}
 								</label>
 								<div class="relative">
 									<span class="material-symbols-outlined absolute left-0 bottom-3 text-gray-400 group-focus-within:text-primary transition-colors">
 										person
 									</span>
 									<input
+										id="contact-name"
+										name="name"
 										class="w-full pl-8 pr-4 py-2 bg-transparent border-0 border-b-2 border-blue-200 focus:border-primary focus:ring-0 text-lg font-medium text-gray-700 placeholder-gray-300 transition-colors"
-										placeholder="Tulis namamu di sini..."
+										placeholder={contactPage.namePlaceholder}
 										type="text"
+										minlength="2"
+										maxlength="80"
+										required
 									/>
 								</div>
 							</div>
 							<div class="relative group">
-								<label class="block text-primary font-bold mb-1 text-sm uppercase tracking-wide">
-									Email (Punya Orang Tua)
+								<label class="block text-primary font-bold mb-1 text-sm uppercase tracking-wide" for="contact-email">
+									{contactPage.emailLabel}
 								</label>
 								<div class="relative">
 									<span class="material-symbols-outlined absolute left-0 bottom-3 text-gray-400 group-focus-within:text-primary transition-colors">
 										alternate_email
 									</span>
 									<input
+										id="contact-email"
+										name="email"
 										class="w-full pl-8 pr-4 py-2 bg-transparent border-0 border-b-2 border-blue-200 focus:border-primary focus:ring-0 text-lg font-medium text-gray-700 placeholder-gray-300 transition-colors"
-										placeholder="contoh@email.com"
+										placeholder={contactPage.emailPlaceholder}
 										type="email"
+										maxlength="120"
+										required
 									/>
 								</div>
 							</div>
 							<div class="relative group mt-2">
-								<label class="block text-primary font-bold mb-1 text-sm uppercase tracking-wide">
-									Pesan Untuk Sekolah
+								<label class="block text-primary font-bold mb-1 text-sm uppercase tracking-wide" for="contact-message">
+									{contactPage.messageLabel}
 								</label>
 								<div class="relative bg-yellow-50 rounded-lg border border-yellow-200 p-1 shadow-inner">
 									<textarea
+										id="contact-message"
+										name="message"
 										class="w-full bg-notebook-lines bg-local border-none focus:ring-0 text-lg leading-[32px] text-gray-700 font-handwriting resize-none bg-transparent px-4"
-										placeholder="Tulis ceritamu di baris ini..."
+										placeholder={contactPage.messagePlaceholder}
 										rows="5"
 										style="background-attachment: local;"
+										minlength="10"
+										maxlength="2000"
+										required
 									></textarea>
 								</div>
 							</div>
+							<p
+								id="contact-form-feedback"
+								class="hidden rounded-xl border px-4 py-3 text-sm font-semibold"
+								aria-live="polite"
+							></p>
 							<div class="mt-4 flex justify-end">
 								<button
+									id="contact-form-submit"
 									class="group relative inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-3 rounded-full font-black text-lg shadow-lg shadow-red-200 hover:shadow-xl hover:bg-red-600 hover:-translate-y-1 transition-all duration-300 w-full md:w-auto"
-									type="button"
+									type="submit"
 								>
-									<span>Kirim Surat</span>
+									<span>{contactPage.submitLabel}</span>
 									<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">send</span>
 								</button>
 							</div>
@@ -199,26 +240,144 @@ import Layout from '../layouts/Layout.astro';
 	<footer class="bg-white border-t border-gray-100 py-10 mt-auto">
 		<div class="layout-container max-w-[960px] mx-auto px-6">
 			<div class="flex flex-col md:flex-row items-center justify-between gap-6">
-				<div class="flex flex-col gap-2 text-center md:text-left">
-					<div class="flex items-center justify-center md:justify-start gap-2 text-gray-800 font-bold text-lg">
-						<span class="material-symbols-outlined text-primary">map</span>
-						<span>Lokasi Kami</span>
+					<div class="flex flex-col gap-2 text-center md:text-left">
+						<div class="flex items-center justify-center md:justify-start gap-2 text-gray-800 font-bold text-lg">
+							<span class="material-symbols-outlined text-primary">map</span>
+							<span>{contactPage.locationTitle}</span>
+						</div>
+						<p class="text-gray-500">{contactPage.locationAddress}</p>
 					</div>
-					<p class="text-gray-500">Jalan Pendidikan No. 1, Klagen, Indonesia</p>
-				</div>
 				<div class="w-full md:w-64 h-24 rounded-2xl overflow-hidden border-4 border-white shadow-lg rotate-1 hover:rotate-0 transition-transform">
 					<img
 						class="w-full h-full object-cover"
-						data-alt="Map showing the location of the school in Klagen"
+						alt={contactPage.mapImageAlt}
 						data-location="Klagen"
-						src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPyFiXNzy9qG9lAnWT56j_sWIO5WOTRTCragURivoKbgkrp5Y08R-Yb72mDmGWGWACuQELKHwEMw6e-IRHPAZ2G002ZViQbK10GHf-NbQTm2u9QpWhIF8P7x-QoE4LXxSXJJirwC6FHTJePgcOgM50PNH5gKOhONRdJQR8ZbYSR6RnVJMZKEVVK92xBAVpsdVolEvXK4SBVorsZjzjgFOrdOfKJ2_n4xsvmdKc-bjmUy-BqYuoYMZ4nhiYy1vBBDCDXXpmbbIXqYA"
+						src={getImageUrl(contactPage.mapImage) ?? mapFallbackImage}
 					/>
 					<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
 				</div>
 			</div>
 			<div class="mt-8 pt-8 border-t border-gray-100 text-center">
-				<p class="text-gray-400 text-sm">© 2023 SDN Klagen 1. Dibuat dengan ❤️ untuk murid-murid hebat.</p>
+				<p class="text-gray-400 text-sm">{contactPage.footerCopyright}</p>
 			</div>
 		</div>
 	</footer>
+
+	<script is:inline>
+		const form = document.getElementById('contact-form');
+		const submitButton = document.getElementById('contact-form-submit');
+		const feedback = document.getElementById('contact-form-feedback');
+
+		if (form && submitButton && feedback) {
+			const setFeedback = (message, type) => {
+				feedback.textContent = message;
+				feedback.classList.remove(
+					'hidden',
+					'border-red-200',
+					'bg-red-50',
+					'text-red-700',
+					'border-green-200',
+					'bg-green-50',
+					'text-green-700'
+				);
+
+				if (type === 'error') {
+					feedback.classList.add('border-red-200', 'bg-red-50', 'text-red-700');
+					return;
+				}
+
+				feedback.classList.add('border-green-200', 'bg-green-50', 'text-green-700');
+			};
+
+			const sendContactMessage = async (payload) => {
+				const endpoints = ['/api/contact', '/.netlify/functions/contact'];
+				let response = null;
+				let lastError = null;
+
+				for (const endpoint of endpoints) {
+					try {
+						const currentResponse = await fetch(endpoint, {
+							method: 'POST',
+							headers: { 'Content-Type': 'application/json' },
+							body: JSON.stringify(payload),
+						});
+
+						// Jika endpoint redirect tidak aktif (404), coba endpoint Netlify langsung.
+						if (currentResponse.status === 404 && endpoint !== endpoints[endpoints.length - 1]) {
+							continue;
+						}
+
+						response = currentResponse;
+						break;
+					} catch (error) {
+						lastError = error;
+					}
+				}
+
+				if (!response) {
+					throw lastError ?? new Error('No response from contact endpoint');
+				}
+
+				const contentType = response.headers.get('content-type') ?? '';
+				let result = null;
+
+				if (contentType.includes('application/json')) {
+					result = await response.json();
+				} else {
+					const text = await response.text();
+					result = {
+						ok: false,
+						message: text ? text.slice(0, 200) : `HTTP ${response.status}`,
+					};
+				}
+
+				return { response, result };
+			};
+
+			form.addEventListener('submit', async (event) => {
+				event.preventDefault();
+
+				if (!(form instanceof HTMLFormElement)) {
+					return;
+				}
+
+				if (!form.reportValidity()) {
+					return;
+				}
+
+				const formData = new FormData(form);
+				const payload = {
+					name: String(formData.get('name') ?? ''),
+					email: String(formData.get('email') ?? ''),
+					message: String(formData.get('message') ?? ''),
+					website: String(formData.get('website') ?? ''),
+				};
+
+				submitButton.setAttribute('disabled', 'true');
+				submitButton.classList.add('opacity-70', 'cursor-not-allowed');
+				setFeedback('Mengirim pesan...', 'success');
+
+				try {
+					const { response, result } = await sendContactMessage(payload);
+					if (response.status === 404) {
+						setFeedback('Endpoint kontak belum aktif. Jalankan via Netlify Dev atau deploy ulang di Netlify.', 'error');
+						return;
+					}
+
+					if (!response.ok || !result?.ok) {
+						setFeedback(result?.message ?? 'Gagal mengirim pesan. Coba lagi.', 'error');
+						return;
+					}
+
+					form.reset();
+					setFeedback('Pesan berhasil dikirim. Admin akan membaca di Sanity.', 'success');
+				} catch (_error) {
+					setFeedback('Tidak bisa terhubung ke server. Coba lagi.', 'error');
+				} finally {
+					submitButton.removeAttribute('disabled');
+					submitButton.classList.remove('opacity-70', 'cursor-not-allowed');
+				}
+			});
+		}
+	</script>
 </Layout>

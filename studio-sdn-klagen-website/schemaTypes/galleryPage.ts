@@ -36,5 +36,56 @@ export const galleryPage = defineType({
     defineField({ name: "filterArtsLabel", title: "Filter Arts Label", type: "string" }),
     defineField({ name: "filterLearningLabel", title: "Filter Learning Label", type: "string" }),
     defineField({ name: "filterAnnouncementsLabel", title: "Filter Announcements Label", type: "string" }),
+    defineField({
+      name: "galleryItems",
+      title: "Gallery Items",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          fields: [
+            defineField({ name: "title", title: "Title", type: "string", validation: (Rule) => Rule.required() }),
+            defineField({
+              name: "description",
+              title: "Description",
+              type: "text",
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: "category",
+              title: "Category",
+              type: "string",
+              options: {
+                list: [
+                  { title: "Ekstrakurikuler", value: "ekstrakurikuler" },
+                  { title: "Seni", value: "seni" },
+                  { title: "Pembelajaran", value: "pembelajaran" },
+                  { title: "Pengumuman", value: "pengumuman" },
+                ],
+                layout: "radio",
+                direction: "horizontal",
+              },
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({ name: "image", title: "Image", type: "image", options: { hotspot: true } }),
+            defineField({ name: "imageAlt", title: "Image Alt", type: "string" }),
+            defineField({ name: "metaLabel", title: "Meta Label", type: "string" }),
+            defineField({
+              name: "icon",
+              title: "Material Icon Name",
+              type: "string",
+              description: "Contoh: sports_soccer, palette, science, campaign",
+            }),
+          ],
+          preview: {
+            select: {
+              title: "title",
+              subtitle: "category",
+              media: "image",
+            },
+          },
+        }),
+      ],
+    }),
   ],
 });

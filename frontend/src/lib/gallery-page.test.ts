@@ -8,6 +8,8 @@ describe("normalizeGalleryPage", () => {
     expect(data.featuredBadgeLabel).toBe("Kegiatan SDN Klagen 1");
     expect(data.featuredActivities.length).toBeGreaterThan(0);
     expect(data.activitiesTitle).toBe("Kegiatan & Aktivitas SDN Klagen 1");
+    expect(data.galleryItems.length).toBeGreaterThan(0);
+    expect(data.galleryItems[0]?.category).toBe("ekstrakurikuler");
   });
 
   it("overrides defaults with provided fields", () => {
@@ -26,11 +28,24 @@ describe("normalizeGalleryPage", () => {
           imageAlt: "Alt",
         },
       ],
+      galleryItems: [
+        {
+          title: "Kegiatan Baru",
+          description: "Deskripsi kegiatan",
+          category: "seni",
+          image: undefined,
+          imageAlt: "Alt",
+          metaLabel: "Meta",
+          icon: "palette",
+        },
+      ],
     });
 
     expect(data.featuredTitle).toBe("Agenda Sekolah");
     expect(data.featuredActivities[0]?.badgeLabel).toBe("Kegiatan Khusus");
     expect(data.activitiesTitle).toBe("Kegiatan & Aktivitas SDN Klagen 1");
+    expect(data.galleryItems[0]?.title).toBe("Kegiatan Baru");
+    expect(data.galleryItems[0]?.category).toBe("seni");
   });
 });
 

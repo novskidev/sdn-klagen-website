@@ -51,6 +51,58 @@ const featuredFallbackImages = [
 	'https://lh3.googleusercontent.com/aida-public/AB6AXuDWsqjZkFQD4CM_1MJWj6CrCMnD6T3_CI14CyZxli3WPeK8uwWWFy49CH9-yaJcdr-2JbiSE7ZVWeQPYfAd8JIYT3auWQT6-a2oM3ocOglCz2EYLKL8pvQPbKzM4yk2Qt-LrpyjubHS27Ob70p8jukY12KUsxEJMvob9RFrK3mVkYPhRD3WnsJvCqyDYDtzR691S8UIbiXO6yjkEYxtR_xsO4fZVoqX0pDUb3deU22M0fxrLNXI4T_RphLpCafI8Bg-kxOVcWrP9YQ',
 	'https://lh3.googleusercontent.com/aida-public/AB6AXuDAjR6lKIQAg1cark0HtFD8B97zNJT_23G_1dJQ54XkBtdcnNkL17SGv1TRc15fRGVO4T30KXNFEzz2EwdJu4I4h7jQDpMnB7favFE2VflMUuRzjzR9_rNcFSlKfDBU9gJQVTvyIzFyzgU7kXS8l7jWLBKQy3feqSayBAOxy89P84kY84vIAVj_hW6-NM8RMuNaDfN1xo41mMirmQWpRvk7_KAMDMLkb1Im1-kbIgPmmIutF_J1jyKpWtZHfxh6sAFSAfgPRrGd4xU',
 ];
+
+const galleryFallbackImages = [
+	'https://lh3.googleusercontent.com/aida-public/AB6AXuAkLajToNwQsjzb5Ws6lSHGtQaeEPSJe3TJ8Y4zZd86ZafMWcFkMui-T00eAvoB7IdOUgNEkP8ZEc99iMEbFSi96PFqX0WOTVyg7yw40uZQ8xtKjAkQ87hOGsof83L5PxIQLXxrWspoRlzMTTVBNmIEgyqTG8auaIb6TliBWbgqwGxhqlreJnwGBMB1z2i8sgBrhq81c5FgZ59YIUaWAeAwTF1cIHL_4l42zj8wEEk_Ah38j9xE1xmSbRbkBIHfB8EqpyqrHQo2zBI',
+	'https://lh3.googleusercontent.com/aida-public/AB6AXuB_D3GHaTyUHuhJRV8I3s6mNzqw7JtPkfhwOqDNegqsCJvVyD6YMytXO-Ko7XMAh2iHcELhEB6ioFCHsPLc6jZaaVcKOW397d6vYpmqK95J7e9YwdrCQSVWf7Pg5MZfTwOBHRjEbp35K318w1noEYz_OShXlu7EHP_mMDr9bnjTVfQHywxY2pL3RhzNa4H8-B91tSeW2gS5GpUsldhdDbbO2j4BdFqecbgiRjyXnXf7re8cD3XRXDxJ7du42UTj81LIq5e_39MdaZg',
+	'https://lh3.googleusercontent.com/aida-public/AB6AXuDiJBBBhZNc889aT4SdvEIvfT0h0CjQ7oSQ83VGO5bMipoTOm6Ka95x9qOG6t8wd-QppeXEvRgO7sLxpKM_7Tyvi2XvoOxx_xhV2AQ-ptFlqMDrEvn7WSP76XaX1joY-HeCvy8rOjcY4zsoC6KQNMRFJzrzERXJIDSMQhBcJ3WpnyFiR0lYot9_5NRiValWo8rdTgJQrLe2Gxc4atZso1NC3XyLi4VbBl6Vk0dK_jf9F-Hpvi-vq-6xb7HImzeRwPT9zzXkp00b3s0',
+	'https://lh3.googleusercontent.com/aida-public/AB6AXuBBFU0LutRgCu49Bt0YRlDEDjz5WhZV9XThWAfnhXmmri-Mm78sZF1vhXmlz9hedHCiVr-q9FsouiJYqlSgzXS3NLWw95MoeqBqE0Z0hB6bZFZPuop377WIOy1JZh-eun4yu2IzWetgouw4IrNLcqJ1wrHgU-LRgf8BHpCsndhNb9eEHLjp2-pITmNclybkhBYlnNvM10CDI_gseKCKTnsbY7LBUpESY22k14TDDTGgW3esiYwVg9C6pdD-staTy0V-I3ufKoUs9QM',
+];
+
+const galleryCardThemes = [
+	{
+		rotation: 'rotate-neg-1',
+		pinClasses: 'pin pin-blue',
+		borderClasses: 'border-blue-100',
+		badgeClasses: 'bg-blue-50 text-blue-700',
+		iconWrapClasses: 'bg-blue-500 text-white',
+	},
+	{
+		rotation: 'rotate-pos-2 mt-8',
+		pinClasses: 'pin pin-yellow',
+		borderClasses: 'border-yellow-100',
+		badgeClasses: 'bg-yellow-50 text-yellow-700',
+		iconWrapClasses: 'bg-yellow-500 text-white',
+	},
+	{
+		rotation: 'rotate-pos-1',
+		pinClasses: 'pin',
+		borderClasses: 'border-green-100',
+		badgeClasses: 'bg-green-50 text-green-700',
+		iconWrapClasses: 'bg-green-500 text-white',
+	},
+	{
+		rotation: 'rotate-neg-2 mt-4',
+		pinClasses: 'pin pin-blue',
+		borderClasses: 'border-purple-100',
+		badgeClasses: 'bg-purple-50 text-purple-700',
+		iconWrapClasses: 'bg-purple-500 text-white',
+	},
+];
+
+const categoryIconMap = {
+	ekstrakurikuler: 'sports_soccer',
+	seni: 'palette',
+	pembelajaran: 'science',
+	pengumuman: 'campaign',
+};
+
+const categoryLabelMap = {
+	ekstrakurikuler: galleryPage.filterExtracurricularLabel,
+	seni: galleryPage.filterArtsLabel,
+	pembelajaran: galleryPage.filterLearningLabel,
+	pengumuman: galleryPage.filterAnnouncementsLabel,
+};
 ---
 
 <Layout
@@ -287,10 +339,12 @@ const featuredFallbackImages = [
 								{galleryPage.activitiesSubtitle}
 							</p>
 						</div>
-						<div class="flex flex-wrap justify-center gap-4">
+						<div class="flex flex-wrap justify-center gap-4" data-gallery-filter-group>
 							<button
 								class="group flex items-center gap-2 rounded-full bg-white px-6 py-3 shadow-md hover:bg-gray-50 transition-all hover:-translate-y-1"
 								type="button"
+								data-gallery-filter="all"
+								aria-pressed="true"
 							>
 								<span class="material-symbols-outlined text-gray-400 group-hover:text-gray-600">grid_view</span>
 								<span class="font-bold text-gray-600">{galleryPage.filterAllLabel}</span>
@@ -298,6 +352,8 @@ const featuredFallbackImages = [
 							<button
 								class="group flex items-center gap-2 rounded-full bg-[#ff6b6b] px-6 py-3 text-white shadow-md hover:bg-[#fa5252] transition-all hover:-translate-y-1 hover:rotate-2"
 								type="button"
+								data-gallery-filter="ekstrakurikuler"
+								aria-pressed="false"
 							>
 								<span class="material-symbols-outlined">sports_soccer</span>
 								<span class="font-bold">{galleryPage.filterExtracurricularLabel}</span>
@@ -305,6 +361,8 @@ const featuredFallbackImages = [
 							<button
 								class="group flex items-center gap-2 rounded-full bg-[#fcc419] px-6 py-3 text-white shadow-md hover:bg-[#fab005] transition-all hover:-translate-y-1 hover:-rotate-2"
 								type="button"
+								data-gallery-filter="seni"
+								aria-pressed="false"
 							>
 								<span class="material-symbols-outlined">palette</span>
 								<span class="font-bold">{galleryPage.filterArtsLabel}</span>
@@ -312,6 +370,8 @@ const featuredFallbackImages = [
 							<button
 								class="group flex items-center gap-2 rounded-full bg-[#51cf66] px-6 py-3 text-white shadow-md hover:bg-[#40c057] transition-all hover:-translate-y-1 hover:rotate-1"
 								type="button"
+								data-gallery-filter="pembelajaran"
+								aria-pressed="false"
 							>
 								<span class="material-symbols-outlined">science</span>
 								<span class="font-bold">{galleryPage.filterLearningLabel}</span>
@@ -319,6 +379,8 @@ const featuredFallbackImages = [
 							<button
 								class="group flex items-center gap-2 rounded-full bg-[#4dabf7] px-6 py-3 text-white shadow-md hover:bg-[#339af0] transition-all hover:-translate-y-1 hover:-rotate-1"
 								type="button"
+								data-gallery-filter="pengumuman"
+								aria-pressed="false"
 							>
 								<span class="material-symbols-outlined">campaign</span>
 								<span class="font-bold">{galleryPage.filterAnnouncementsLabel}</span>
@@ -326,109 +388,70 @@ const featuredFallbackImages = [
 						</div>
 					</div>
 					<div class="columns-1 gap-6 sm:columns-2 lg:columns-3 xl:columns-4 space-y-6">
-						<div class="break-inside-avoid relative hover-lift transition-transform duration-300 rotate-neg-1">
-							<div class="pin pin-blue absolute -top-3 left-1/2 z-20 h-5 w-5 -translate-x-1/2 rounded-full"></div>
-							<div class="relative flex flex-col bg-white p-3 pb-8 shadow-polaroid">
-								<div class="aspect-[4/3] w-full overflow-hidden bg-gray-100 mb-4">
+						{galleryPage.galleryItems.map((item, index) => {
+							const theme = galleryCardThemes[index % galleryCardThemes.length];
+							const imageUrl = getImageUrl(item.image) ?? galleryFallbackImages[index % galleryFallbackImages.length];
+							const iconName = item.icon?.trim() || categoryIconMap[item.category];
+							const categoryLabel = categoryLabelMap[item.category];
+							return (
+								<article
+									class:list={[
+										'break-inside-avoid relative hover-lift transition-transform duration-300',
+										theme.rotation,
+									]}
+									data-gallery-card
+									data-gallery-category={item.category}
+								>
 									<div
-										class="h-full w-full bg-cover bg-center transition-transform hover:scale-110 duration-700"
-										data-alt="Kids playing soccer on a green field"
-										style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAkLajToNwQsjzb5Ws6lSHGtQaeEPSJe3TJ8Y4zZd86ZafMWcFkMui-T00eAvoB7IdOUgNEkP8ZEc99iMEbFSi96PFqX0WOTVyg7yw40uZQ8xtKjAkQ87hOGsof83L5PxIQLXxrWspoRlzMTTVBNmIEgyqTG8auaIb6TliBWbgqwGxhqlreJnwGBMB1z2i8sgBrhq81c5FgZ59YIUaWAeAwTF1cIHL_4l42zj8wEEk_Ah38j9xE1xmSbRbkBIHfB8EqpyqrHQo2zBI");'
+										class:list={[
+											'absolute -top-3 left-1/2 z-20 h-5 w-5 -translate-x-1/2 rounded-full',
+											theme.pinClasses,
+										]}
 									></div>
-								</div>
-								<div class="text-center font-display">
-									<p class="text-lg font-bold text-gray-800" style="font-family: 'Lexend', cursive;">
-										Kelas 3A Menang Bola! ⚽
-									</p>
-									<p class="text-xs text-gray-400 mt-1">12 Okt 2023</p>
-								</div>
-							</div>
-						</div>
-						<div class="break-inside-avoid relative hover-lift transition-transform duration-300 rotate-pos-2 mt-8">
-							<div class="tape absolute -top-3 -left-3 z-20 h-8 w-24 rotate-[315deg]"></div>
-							<div class="tape absolute -top-3 -right-3 z-20 h-8 w-24 rotate-[45deg]"></div>
-							<div class="relative flex flex-col bg-[#fffdf5] p-6 shadow-md border border-gray-100">
-								<h3 class="text-xl font-bold text-gray-800 mb-2">Roket Saya 🚀</h3>
-								<div class="aspect-square w-full bg-white border-2 border-dashed border-gray-200 p-2 mb-2">
 									<div
-										class="h-full w-full bg-contain bg-no-repeat bg-center"
-										data-alt="Child's drawing of a rocket ship"
-										style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_D3GHaTyUHuhJRV8I3s6mNzqw7JtPkfhwOqDNegqsCJvVyD6YMytXO-Ko7XMAh2iHcELhEB6ioFCHsPLc6jZaaVcKOW397d6vYpmqK95J7e9YwdrCQSVWf7Pg5MZfTwOBHRjEbp35K318w1noEYz_OShXlu7EHP_mMDr9bnjTVfQHywxY2pL3RhzNa4H8-B91tSeW2gS5GpUsldhdDbbO2j4BdFqecbgiRjyXnXf7re8cD3XRXDxJ7du42UTj81LIq5e_39MdaZg");'
-									></div>
-								</div>
-								<div class="flex justify-between items-end mt-2">
-									<span class="text-sm font-semibold text-gray-500">Oleh Ani (Kelas 2)</span>
-									<div class="h-8 w-8 rounded-full bg-yellow-400 flex items-center justify-center text-white">
-										<span class="material-symbols-outlined text-sm">star</span>
+										class:list={[
+											'relative overflow-hidden rounded-2xl border bg-white p-3 pb-5 shadow-polaroid',
+											theme.borderClasses,
+										]}
+									>
+										<div class="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-100">
+											<div
+												class="h-full w-full bg-cover bg-center transition-transform duration-700 hover:scale-110"
+												data-alt={item.imageAlt}
+												style={`background-image: url("${imageUrl}");`}
+											></div>
+											<div class="absolute right-3 top-3">
+												<div
+													class:list={[
+														'flex h-9 w-9 items-center justify-center rounded-full shadow-lg',
+														theme.iconWrapClasses,
+													]}
+												>
+													<span class="material-symbols-outlined text-base">{iconName}</span>
+												</div>
+											</div>
+										</div>
+										<div class="mt-4 flex flex-col gap-2">
+											<div class="flex items-start justify-between gap-2">
+												<h3 class="text-lg font-black leading-tight text-gray-800">{item.title}</h3>
+												<span
+													class:list={[
+														'rounded-full px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide',
+														theme.badgeClasses,
+													]}
+												>
+													{categoryLabel}
+												</span>
+											</div>
+											<p class="text-sm font-medium leading-relaxed text-gray-600">{item.description}</p>
+											{item.metaLabel ? (
+												<p class="text-xs font-semibold text-gray-400">{item.metaLabel}</p>
+											) : null}
+										</div>
 									</div>
-								</div>
-							</div>
-						</div>
-						<div class="break-inside-avoid relative hover-lift transition-transform duration-300 rotate-neg-1">
-							<div
-								class="flex flex-col items-center justify-center bg-white rounded-full p-6 shadow-sticker border-4 border-[#51cf66] h-64 w-64 mx-auto text-center relative overflow-hidden"
-							>
-								<div class="absolute inset-0 bg-green-50 opacity-50"></div>
-								<span class="material-symbols-outlined text-6xl text-[#51cf66] mb-2 relative z-10">science</span>
-								<h3 class="text-xl font-black text-gray-800 relative z-10">Pemenang Sains</h3>
-								<p class="text-sm font-medium text-gray-500 relative z-10 mt-1">Diberikan kepada</p>
-								<p class="text-lg font-bold text-[#51cf66] relative z-10">Kelompok 4</p>
-								<div class="absolute top-0 -left-10 w-20 h-64 bg-white opacity-20 rotate-[20deg] transform translate-x-10"></div>
-							</div>
-						</div>
-						<div class="break-inside-avoid relative hover-lift transition-transform duration-300 rotate-pos-1">
-							<div class="pin pin-yellow absolute -top-3 left-1/2 z-20 h-5 w-5 -translate-x-1/2 rounded-full"></div>
-							<div class="relative flex flex-col bg-white p-3 pb-8 shadow-polaroid">
-								<div class="aspect-[4/3] w-full overflow-hidden bg-gray-100 mb-4">
-									<div
-										class="h-full w-full bg-cover bg-center"
-										data-alt="Children gathering in a circle during an event"
-										style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiJBBBhZNc889aT4SdvEIvfT0h0CjQ7oSQ83VGO5bMipoTOm6Ka95x9qOG6t8wd-QppeXEvRgO7sLxpKM_7Tyvi2XvoOxx_xhV2AQ-ptFlqMDrEvn7WSP76XaX1joY-HeCvy8rOjcY4zsoC6KQNMRFJzrzERXJIDSMQhBcJ3WpnyFiR0lYot9_5NRiValWo8rdTgJQrLe2Gxc4atZso1NC3XyLi4VbBl6Vk0dK_jf9F-Hpvi-vq-6xb7HImzeRwPT9zzXkp00b3s0");'
-									></div>
-								</div>
-								<div class="text-center font-display">
-									<p class="text-lg font-bold text-gray-800">Apel Pagi ☀️</p>
-								</div>
-							</div>
-						</div>
-						<div class="break-inside-avoid relative hover-lift transition-transform duration-300 rotate-neg-2 pt-4">
-							<div class="pin absolute -top-0 left-1/2 z-20 h-5 w-5 -translate-x-1/2 rounded-full"></div>
-							<div class="relative flex flex-col bg-[#ffec99] p-6 shadow-md rounded-br-[3rem]">
-								<span class="material-symbols-outlined text-4xl text-yellow-600 mb-2">campaign</span>
-								<h3 class="text-xl font-bold text-gray-900 mb-2">Jangan Lupa!</h3>
-								<p class="text-gray-800 font-medium">
-									Jumat depan adalah Hari Piyama! Pakai piyama ternyamanmu ke sekolah.
-								</p>
-								<p class="text-sm text-yellow-800 font-bold mt-4 text-right">- Bapak Kepala Sekolah</p>
-							</div>
-						</div>
-						<div class="break-inside-avoid relative hover-lift transition-transform duration-300 rotate-pos-2 mt-4">
-							<div class="tape absolute -top-3 left-1/2 -translate-x-1/2 z-20 h-8 w-24 rotate-0"></div>
-							<div class="relative flex flex-col bg-white p-4 shadow-md">
-								<div class="aspect-[3/4] w-full bg-gray-50 border border-gray-100 p-2 mb-2">
-									<div
-										class="h-full w-full bg-contain bg-no-repeat bg-center"
-										data-alt="Drawing of a colorful flower garden"
-										style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBBFU0LutRgCu49Bt0YRlDEDjz5WhZV9XThWAfnhXmmri-Mm78sZF1vhXmlz9hedHCiVr-q9FsouiJYqlSgzXS3NLWw95MoeqBqE0Z0hB6bZFZPuop377WIOy1JZh-eun4yu2IzWetgouw4IrNLcqJ1wrHgU-LRgf8BHpCsndhNb9eEHLjp2-pITmNclybkhBYlnNvM10CDI_gseKCKTnsbY7LBUpESY22k14TDDTGgW3esiYwVg9C6pdD-staTy0V-I3ufKoUs9QM");'
-									></div>
-								</div>
-								<div class="text-center">
-									<span class="text-sm font-bold text-gray-600">"Kebunku" oleh Sarah</span>
-								</div>
-							</div>
-						</div>
-						<div class="break-inside-avoid relative hover-lift transition-transform duration-300 rotate-neg-1">
-							<div
-								class="flex flex-col items-center justify-center bg-[#258cf4] rounded-xl p-6 shadow-sticker border-b-8 border-[#1864ab] text-center relative text-white"
-							>
-								<div class="flex items-center justify-center h-16 w-16 bg-white/20 rounded-full mb-3 backdrop-blur-sm">
-									<span class="material-symbols-outlined text-4xl">directions_run</span>
-								</div>
-								<h3 class="text-xl font-black mb-1">Pelari Tercepat</h3>
-								<p class="text-sm opacity-90">Hari Olahraga 2023</p>
-								<div class="mt-4 bg-white/20 px-3 py-1 rounded-full text-xs font-bold">Medali Emas</div>
-							</div>
-						</div>
+								</article>
+							);
+						})}
 					</div>
 					<div class="mt-16 flex justify-center">
 						<button
@@ -501,4 +524,54 @@ const featuredFallbackImages = [
 			</div>
 		</footer>
 	</div>
+	<script is:inline>
+		const filterButtons = Array.from(document.querySelectorAll('[data-gallery-filter]'));
+		const cards = Array.from(document.querySelectorAll('[data-gallery-card]'));
+
+		if (filterButtons.length > 0 && cards.length > 0) {
+			const setActiveButton = (activeButton) => {
+				filterButtons.forEach((button) => {
+					const isActive = button === activeButton;
+					button.classList.toggle('gallery-filter-active', isActive);
+					button.setAttribute('aria-pressed', String(isActive));
+				});
+			};
+
+			const applyFilter = (filterValue) => {
+				cards.forEach((card) => {
+					const category = card.getAttribute('data-gallery-category');
+					const shouldShow = filterValue === 'all' || category === filterValue;
+					card.classList.toggle('gallery-card-hidden', !shouldShow);
+				});
+			};
+
+			filterButtons.forEach((button) => {
+				button.addEventListener('click', () => {
+					const filterValue = button.getAttribute('data-gallery-filter') || 'all';
+					setActiveButton(button);
+					applyFilter(filterValue);
+				});
+			});
+
+			const defaultButton =
+				filterButtons.find((button) => button.getAttribute('data-gallery-filter') === 'all') || filterButtons[0];
+			const defaultFilter = defaultButton?.getAttribute('data-gallery-filter') || 'all';
+			setActiveButton(defaultButton);
+			applyFilter(defaultFilter);
+		}
+	</script>
+
+	<style>
+		.gallery-filter-active {
+			transform: translateY(-2px);
+			box-shadow:
+				0 0 0 2px #ffffff,
+				0 0 0 4px rgba(59, 130, 246, 0.45),
+				0 10px 20px rgba(17, 24, 39, 0.18);
+		}
+
+		.gallery-card-hidden {
+			display: none;
+		}
+	</style>
 </Layout>

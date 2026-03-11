@@ -10,6 +10,18 @@ export type FeaturedActivity = {
   imageAlt: string;
 };
 
+export type GalleryCategory = "ekstrakurikuler" | "seni" | "pembelajaran" | "pengumuman";
+
+export type GalleryItem = {
+  title: string;
+  description: string;
+  category: GalleryCategory;
+  image?: unknown;
+  imageAlt: string;
+  metaLabel?: string;
+  icon?: string;
+};
+
 export type GalleryPageData = {
   featuredBadgeLabel: string;
   featuredTitle: string;
@@ -22,6 +34,7 @@ export type GalleryPageData = {
   filterArtsLabel: string;
   filterLearningLabel: string;
   filterAnnouncementsLabel: string;
+  galleryItems: GalleryItem[];
 };
 
 export const GALLERY_PAGE_QUERY = `*[_type == "galleryPage"][0]`;
@@ -76,6 +89,71 @@ const DEFAULTS: GalleryPageData = {
   filterArtsLabel: "Seni",
   filterLearningLabel: "Pembelajaran",
   filterAnnouncementsLabel: "Pengumuman",
+  galleryItems: [
+    {
+      title: "Kelas 3A Menang Bola",
+      description: "Tim kelas 3A meraih juara pada pertandingan persahabatan antar kelas.",
+      category: "ekstrakurikuler",
+      image: undefined,
+      imageAlt: "Siswa bermain sepak bola di lapangan",
+      metaLabel: "12 Okt 2023",
+      icon: "sports_soccer",
+    },
+    {
+      title: "Roket Saya",
+      description: "Karya eksperimen sederhana siswa kelas 2 pada proyek sains minggu ini.",
+      category: "pembelajaran",
+      image: undefined,
+      imageAlt: "Gambar roket karya siswa",
+      metaLabel: "Oleh Ani (Kelas 2)",
+      icon: "rocket_launch",
+    },
+    {
+      title: "Pemenang Sains",
+      description: "Kelompok 4 meraih nilai tertinggi pada presentasi eksperimen kelas.",
+      category: "pembelajaran",
+      image: undefined,
+      imageAlt: "Penghargaan kegiatan sains siswa",
+      metaLabel: "Kelompok 4",
+      icon: "science",
+    },
+    {
+      title: "Apel Pagi",
+      description: "Siswa mengikuti apel pagi bersama guru sebelum kegiatan belajar dimulai.",
+      category: "ekstrakurikuler",
+      image: undefined,
+      imageAlt: "Siswa mengikuti apel pagi",
+      metaLabel: "Kegiatan rutin",
+      icon: "groups",
+    },
+    {
+      title: "Jangan Lupa",
+      description: "Jumat depan adalah Hari Piyama. Pakai piyama ternyamanmu ke sekolah.",
+      category: "pengumuman",
+      image: undefined,
+      imageAlt: "Pengumuman kegiatan sekolah",
+      metaLabel: "Info Sekolah",
+      icon: "campaign",
+    },
+    {
+      title: "Kebunku",
+      description: "Karya seni siswa kelas 4 pada tema lingkungan dan kreativitas.",
+      category: "seni",
+      image: undefined,
+      imageAlt: "Lukisan taman karya siswa",
+      metaLabel: "Oleh Sarah",
+      icon: "palette",
+    },
+    {
+      title: "Pelari Tercepat",
+      description: "Penghargaan untuk siswa dengan catatan waktu terbaik Hari Olahraga.",
+      category: "ekstrakurikuler",
+      image: undefined,
+      imageAlt: "Penghargaan kegiatan olahraga",
+      metaLabel: "Hari Olahraga 2023",
+      icon: "directions_run",
+    },
+  ],
 };
 
 export function normalizeGalleryPage(input: Partial<GalleryPageData> | null | undefined): GalleryPageData {
