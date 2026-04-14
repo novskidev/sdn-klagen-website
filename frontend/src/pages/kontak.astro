@@ -290,33 +290,11 @@ const mapFallbackImage =
 			};
 
 			const sendContactMessage = async (payload) => {
-				const endpoints = ['/api/contact', '/.netlify/functions/contact'];
-				let response = null;
-				let lastError = null;
-
-				for (const endpoint of endpoints) {
-					try {
-						const currentResponse = await fetch(endpoint, {
-							method: 'POST',
-							headers: { 'Content-Type': 'application/json' },
-							body: JSON.stringify(payload),
-						});
-
-						// Jika endpoint redirect tidak aktif (404), coba endpoint Netlify langsung.
-						if (currentResponse.status === 404 && endpoint !== endpoints[endpoints.length - 1]) {
-							continue;
-						}
-
-						response = currentResponse;
-						break;
-					} catch (error) {
-						lastError = error;
-					}
-				}
-
-				if (!response) {
-					throw lastError ?? new Error('No response from contact endpoint');
-				}
+				const response = await fetch('/api/contact', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(payload),
+				});
 
 				const contentType = response.headers.get('content-type') ?? '';
 				let result = null;
@@ -360,7 +338,7 @@ const mapFallbackImage =
 				try {
 					const { response, result } = await sendContactMessage(payload);
 					if (response.status === 404) {
-						setFeedback('Endpoint kontak belum aktif. Jalankan via Netlify Dev atau deploy ulang di Netlify.', 'error');
+						setFeedback('Endpoint /api/contact tidak ditemukan. Pastikan deploy Vercel terbaru berhasil.', 'error');
 						return;
 					}
 

@@ -10,6 +10,7 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@astrojs/vercel": "^9.0.5",
     "@sanity/client": "^7.14.1",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.17.1",
