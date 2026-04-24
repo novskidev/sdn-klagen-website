@@ -27,8 +27,11 @@ export type GalleryPageData = {
   featuredTitle: string;
   featuredDescription: string;
   featuredActivities: FeaturedActivity[];
+  activitiesIcon: string;
   activitiesTitle: string;
   activitiesSubtitle: string;
+  activitiesCtaLabel: string;
+  activitiesCtaUrl: string;
   filterAllLabel: string;
   filterExtracurricularLabel: string;
   filterArtsLabel: string;
@@ -82,8 +85,11 @@ const DEFAULTS: GalleryPageData = {
       imageAlt: "Siswa mempresentasikan kegiatan klub robotik",
     },
   ],
+  activitiesIcon: "photo_camera",
   activitiesTitle: "Kegiatan & Aktivitas SDN Klagen 1",
   activitiesSubtitle: "Lihat kegiatan pembelajaran, ekstrakurikuler, dan program sekolah minggu ini.",
+  activitiesCtaLabel: "Lihat Semua Foto ->",
+  activitiesCtaUrl: "/galeri",
   filterAllLabel: "Semua",
   filterExtracurricularLabel: "Ekstrakurikuler",
   filterArtsLabel: "Seni",

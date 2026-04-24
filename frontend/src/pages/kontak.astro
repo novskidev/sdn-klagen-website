@@ -7,8 +7,6 @@ const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const contactPage = await fetchContactPage(getSanityClient());
 const mascotFallbackImage =
 	'https://lh3.googleusercontent.com/aida-public/AB6AXuDkAxEZISpV1x676Io5ME_ZF7yMulMRM--gq8WAsA6COaj0F34UJAzZr_Qj-k8ALm2RIjCF1gXHvrhNpB3I7ml-N_iAd4KNQDiecPIYpniyepmzo0swbGW-RlUq1Uu2hGIfo3QhiE1_I3xPxbouI3bFLOASVm63-ZwjaK_7ynQU0Azh5b7Bzq6QbFcvPMN63GjxO9Q-oAiRehO_QozQHSyQJ3cBaWuNPUP_mR0rNMiHNm-Eqrwxj-KfQP0XFsBiVZzLpOmo5t_2Hvs';
-const mapFallbackImage =
-	'https://lh3.googleusercontent.com/aida-public/AB6AXuDPyFiXNzy9qG9lAnWT56j_sWIO5WOTRTCragURivoKbgkrp5Y08R-Yb72mDmGWGWACuQELKHwEMw6e-IRHPAZ2G002ZViQbK10GHf-NbQTm2u9QpWhIF8P7x-QoE4LXxSXJJirwC6FHTJePgcOgM50PNH5gKOhONRdJQR8ZbYSR6RnVJMZKEVVK92xBAVpsdVolEvXK4SBVorsZjzjgFOrdOfKJ2_n4xsvmdKc-bjmUy-BqYuoYMZ4nhiYy1vBBDCDXXpmbbIXqYA';
 ---
 
 <Layout
@@ -18,9 +16,13 @@ const mapFallbackImage =
 	<header class="w-full bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b-4 border-primary/20">
 		<div class="max-w-[1280px] mx-auto px-6 py-4">
 			<div class="flex items-center justify-between">
-					<div class="flex items-center gap-3">
-						<div class="bg-primary text-white p-2 rounded-xl">
-							<span class="material-symbols-outlined text-3xl">school</span>
+				<div class="flex items-center gap-3">
+						<div class="overflow-hidden rounded-xl border-2 border-primary/20 shadow-sm">
+							<img
+								src="/sdnklagen.png"
+								alt="Logo SDN Klagen 1"
+								class="h-10 w-10 object-cover"
+							/>
 						</div>
 						<div>
 							<h1 class="text-xl md:text-2xl font-black text-gray-800 tracking-tight">{contactPage.schoolName}</h1>
@@ -240,21 +242,23 @@ const mapFallbackImage =
 	<footer class="bg-white border-t border-gray-100 py-10 mt-auto">
 		<div class="layout-container max-w-[960px] mx-auto px-6">
 			<div class="flex flex-col md:flex-row items-center justify-between gap-6">
-					<div class="flex flex-col gap-2 text-center md:text-left">
-						<div class="flex items-center justify-center md:justify-start gap-2 text-gray-800 font-bold text-lg">
-							<span class="material-symbols-outlined text-primary">map</span>
-							<span>{contactPage.locationTitle}</span>
-						</div>
-						<p class="text-gray-500">{contactPage.locationAddress}</p>
+				<div class="flex flex-col gap-2 text-center md:text-left">
+					<div class="flex items-center justify-center md:justify-start gap-2 text-gray-800 font-bold text-lg">
+						<span class="material-symbols-outlined text-primary">map</span>
+						<span>{contactPage.locationTitle}</span>
 					</div>
-				<div class="w-full md:w-64 h-24 rounded-2xl overflow-hidden border-4 border-white shadow-lg rotate-1 hover:rotate-0 transition-transform">
-					<img
-						class="w-full h-full object-cover"
-						alt={contactPage.mapImageAlt}
-						data-location="Klagen"
-						src={getImageUrl(contactPage.mapImage) ?? mapFallbackImage}
-					/>
-					<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+					<p class="text-gray-500">Klagen, Kec. Barat, Kab. Magetan, Prov. Jawa Timur.</p>
+				</div>
+				<div class="w-full md:w-72 h-32 rounded-2xl overflow-hidden border-4 border-white shadow-lg rotate-1 hover:rotate-0 transition-transform">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.131194371425!2d111.48665109999999!3d-7.560671600000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79c01a05a83955%3A0x40a3de51d1500db6!2sSDN%20klagen%201!5e0!3m2!1sen!2sid!4v1777010136815!5m2!1sen!2sid"
+						class="h-full w-full"
+						style="border:0;"
+						allowfullscreen
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+						title="Peta lokasi SDN Klagen 1"
+					></iframe>
 				</div>
 			</div>
 			<div class="mt-8 pt-8 border-t border-gray-100 text-center">

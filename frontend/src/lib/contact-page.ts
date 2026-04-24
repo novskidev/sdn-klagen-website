@@ -29,9 +29,11 @@ export type ContactPageData = {
 
 export const CONTACT_PAGE_QUERY = `*[_type == "contactPage"][0]`;
 
+const currentYear = new Date().getFullYear();
+
 const DEFAULTS: ContactPageData = {
   schoolName: "SDN Klagen 1",
-  schoolTagline: "Sekolah Dasar Ceria",
+  schoolTagline: "Sekolah Dasar Negeri",
   heroTitle: "Kirim Surat ke",
   heroTitleHighlight: "Sekolah!",
   heroSubtitle:
@@ -56,7 +58,7 @@ const DEFAULTS: ContactPageData = {
   locationAddress: "Jalan Pendidikan No. 1, Klagen, Indonesia",
   mapImage: undefined,
   mapImageAlt: "Peta lokasi sekolah di Klagen",
-  footerCopyright: "© 2023 SDN Klagen 1. Dibuat dengan ❤️ untuk murid-murid hebat.",
+  footerCopyright: `© ${currentYear} SDN Klagen 1. Dibuat dengan ❤️ untuk murid-murid hebat.`,
 };
 
 export function normalizeContactPage(input: Partial<ContactPageData> | null | undefined): ContactPageData {
